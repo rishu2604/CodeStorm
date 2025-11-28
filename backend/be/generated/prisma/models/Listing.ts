@@ -9,8 +9,8 @@
  * 🟢 You can import this file directly.
  */
 import type * as runtime from "@prisma/client/runtime/client"
-import type * as $Enums from "../enums.js"
-import type * as Prisma from "../internal/prismaNamespace.js"
+import type * as $Enums from "../enums"
+import type * as Prisma from "../internal/prismaNamespace"
 
 /**
  * Model Listing
@@ -416,13 +416,13 @@ export type ListingWhereInput = {
   favouritesCount?: Prisma.IntFilter<"Listing"> | number
   createdAt?: Prisma.DateTimeFilter<"Listing"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Listing"> | Date | string
-  seller?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
-  category?: Prisma.XOR<Prisma.CategoryScalarRelationFilter, Prisma.CategoryWhereInput>
-  images?: Prisma.ListingImageListRelationFilter
   bids?: Prisma.BidListRelationFilter
-  orders?: Prisma.OrderListRelationFilter
-  favourites?: Prisma.FavouriteListRelationFilter
   conversations?: Prisma.ConversationListRelationFilter
+  favourites?: Prisma.FavouriteListRelationFilter
+  category?: Prisma.XOR<Prisma.CategoryScalarRelationFilter, Prisma.CategoryWhereInput>
+  seller?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  images?: Prisma.ListingImageListRelationFilter
+  orders?: Prisma.OrderListRelationFilter
 }
 
 export type ListingOrderByWithRelationInput = {
@@ -452,13 +452,13 @@ export type ListingOrderByWithRelationInput = {
   favouritesCount?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  seller?: Prisma.UserOrderByWithRelationInput
-  category?: Prisma.CategoryOrderByWithRelationInput
-  images?: Prisma.ListingImageOrderByRelationAggregateInput
   bids?: Prisma.BidOrderByRelationAggregateInput
-  orders?: Prisma.OrderOrderByRelationAggregateInput
-  favourites?: Prisma.FavouriteOrderByRelationAggregateInput
   conversations?: Prisma.ConversationOrderByRelationAggregateInput
+  favourites?: Prisma.FavouriteOrderByRelationAggregateInput
+  category?: Prisma.CategoryOrderByWithRelationInput
+  seller?: Prisma.UserOrderByWithRelationInput
+  images?: Prisma.ListingImageOrderByRelationAggregateInput
+  orders?: Prisma.OrderOrderByRelationAggregateInput
 }
 
 export type ListingWhereUniqueInput = Prisma.AtLeast<{
@@ -491,13 +491,13 @@ export type ListingWhereUniqueInput = Prisma.AtLeast<{
   favouritesCount?: Prisma.IntFilter<"Listing"> | number
   createdAt?: Prisma.DateTimeFilter<"Listing"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Listing"> | Date | string
-  seller?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
-  category?: Prisma.XOR<Prisma.CategoryScalarRelationFilter, Prisma.CategoryWhereInput>
-  images?: Prisma.ListingImageListRelationFilter
   bids?: Prisma.BidListRelationFilter
-  orders?: Prisma.OrderListRelationFilter
-  favourites?: Prisma.FavouriteListRelationFilter
   conversations?: Prisma.ConversationListRelationFilter
+  favourites?: Prisma.FavouriteListRelationFilter
+  category?: Prisma.XOR<Prisma.CategoryScalarRelationFilter, Prisma.CategoryWhereInput>
+  seller?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  images?: Prisma.ListingImageListRelationFilter
+  orders?: Prisma.OrderListRelationFilter
 }, "id">
 
 export type ListingOrderByWithAggregationInput = {
@@ -591,13 +591,13 @@ export type ListingCreateInput = {
   favouritesCount?: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  seller: Prisma.UserCreateNestedOneWithoutListingsInput
-  category: Prisma.CategoryCreateNestedOneWithoutListingsInput
-  images?: Prisma.ListingImageCreateNestedManyWithoutListingInput
   bids?: Prisma.BidCreateNestedManyWithoutListingInput
-  orders?: Prisma.OrderCreateNestedManyWithoutListingInput
-  favourites?: Prisma.FavouriteCreateNestedManyWithoutListingInput
   conversations?: Prisma.ConversationCreateNestedManyWithoutListingInput
+  favourites?: Prisma.FavouriteCreateNestedManyWithoutListingInput
+  category: Prisma.CategoryCreateNestedOneWithoutListingsInput
+  seller: Prisma.UserCreateNestedOneWithoutListingsInput
+  images?: Prisma.ListingImageCreateNestedManyWithoutListingInput
+  orders?: Prisma.OrderCreateNestedManyWithoutListingInput
 }
 
 export type ListingUncheckedCreateInput = {
@@ -627,11 +627,11 @@ export type ListingUncheckedCreateInput = {
   favouritesCount?: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  images?: Prisma.ListingImageUncheckedCreateNestedManyWithoutListingInput
   bids?: Prisma.BidUncheckedCreateNestedManyWithoutListingInput
-  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutListingInput
-  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutListingInput
   conversations?: Prisma.ConversationUncheckedCreateNestedManyWithoutListingInput
+  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutListingInput
+  images?: Prisma.ListingImageUncheckedCreateNestedManyWithoutListingInput
+  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutListingInput
 }
 
 export type ListingUpdateInput = {
@@ -659,13 +659,13 @@ export type ListingUpdateInput = {
   favouritesCount?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  seller?: Prisma.UserUpdateOneRequiredWithoutListingsNestedInput
-  category?: Prisma.CategoryUpdateOneRequiredWithoutListingsNestedInput
-  images?: Prisma.ListingImageUpdateManyWithoutListingNestedInput
   bids?: Prisma.BidUpdateManyWithoutListingNestedInput
-  orders?: Prisma.OrderUpdateManyWithoutListingNestedInput
-  favourites?: Prisma.FavouriteUpdateManyWithoutListingNestedInput
   conversations?: Prisma.ConversationUpdateManyWithoutListingNestedInput
+  favourites?: Prisma.FavouriteUpdateManyWithoutListingNestedInput
+  category?: Prisma.CategoryUpdateOneRequiredWithoutListingsNestedInput
+  seller?: Prisma.UserUpdateOneRequiredWithoutListingsNestedInput
+  images?: Prisma.ListingImageUpdateManyWithoutListingNestedInput
+  orders?: Prisma.OrderUpdateManyWithoutListingNestedInput
 }
 
 export type ListingUncheckedUpdateInput = {
@@ -695,11 +695,11 @@ export type ListingUncheckedUpdateInput = {
   favouritesCount?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  images?: Prisma.ListingImageUncheckedUpdateManyWithoutListingNestedInput
   bids?: Prisma.BidUncheckedUpdateManyWithoutListingNestedInput
-  orders?: Prisma.OrderUncheckedUpdateManyWithoutListingNestedInput
-  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutListingNestedInput
   conversations?: Prisma.ConversationUncheckedUpdateManyWithoutListingNestedInput
+  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutListingNestedInput
+  images?: Prisma.ListingImageUncheckedUpdateManyWithoutListingNestedInput
+  orders?: Prisma.OrderUncheckedUpdateManyWithoutListingNestedInput
 }
 
 export type ListingCreateManyInput = {
@@ -1123,12 +1123,12 @@ export type ListingCreateWithoutSellerInput = {
   favouritesCount?: number
   createdAt?: Date | string
   updatedAt?: Date | string
+  bids?: Prisma.BidCreateNestedManyWithoutListingInput
+  conversations?: Prisma.ConversationCreateNestedManyWithoutListingInput
+  favourites?: Prisma.FavouriteCreateNestedManyWithoutListingInput
   category: Prisma.CategoryCreateNestedOneWithoutListingsInput
   images?: Prisma.ListingImageCreateNestedManyWithoutListingInput
-  bids?: Prisma.BidCreateNestedManyWithoutListingInput
   orders?: Prisma.OrderCreateNestedManyWithoutListingInput
-  favourites?: Prisma.FavouriteCreateNestedManyWithoutListingInput
-  conversations?: Prisma.ConversationCreateNestedManyWithoutListingInput
 }
 
 export type ListingUncheckedCreateWithoutSellerInput = {
@@ -1157,11 +1157,11 @@ export type ListingUncheckedCreateWithoutSellerInput = {
   favouritesCount?: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  images?: Prisma.ListingImageUncheckedCreateNestedManyWithoutListingInput
   bids?: Prisma.BidUncheckedCreateNestedManyWithoutListingInput
-  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutListingInput
-  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutListingInput
   conversations?: Prisma.ConversationUncheckedCreateNestedManyWithoutListingInput
+  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutListingInput
+  images?: Prisma.ListingImageUncheckedCreateNestedManyWithoutListingInput
+  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutListingInput
 }
 
 export type ListingCreateOrConnectWithoutSellerInput = {
@@ -1247,12 +1247,12 @@ export type ListingCreateWithoutCategoryInput = {
   favouritesCount?: number
   createdAt?: Date | string
   updatedAt?: Date | string
+  bids?: Prisma.BidCreateNestedManyWithoutListingInput
+  conversations?: Prisma.ConversationCreateNestedManyWithoutListingInput
+  favourites?: Prisma.FavouriteCreateNestedManyWithoutListingInput
   seller: Prisma.UserCreateNestedOneWithoutListingsInput
   images?: Prisma.ListingImageCreateNestedManyWithoutListingInput
-  bids?: Prisma.BidCreateNestedManyWithoutListingInput
   orders?: Prisma.OrderCreateNestedManyWithoutListingInput
-  favourites?: Prisma.FavouriteCreateNestedManyWithoutListingInput
-  conversations?: Prisma.ConversationCreateNestedManyWithoutListingInput
 }
 
 export type ListingUncheckedCreateWithoutCategoryInput = {
@@ -1281,11 +1281,11 @@ export type ListingUncheckedCreateWithoutCategoryInput = {
   favouritesCount?: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  images?: Prisma.ListingImageUncheckedCreateNestedManyWithoutListingInput
   bids?: Prisma.BidUncheckedCreateNestedManyWithoutListingInput
-  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutListingInput
-  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutListingInput
   conversations?: Prisma.ConversationUncheckedCreateNestedManyWithoutListingInput
+  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutListingInput
+  images?: Prisma.ListingImageUncheckedCreateNestedManyWithoutListingInput
+  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutListingInput
 }
 
 export type ListingCreateOrConnectWithoutCategoryInput = {
@@ -1339,12 +1339,12 @@ export type ListingCreateWithoutImagesInput = {
   favouritesCount?: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  seller: Prisma.UserCreateNestedOneWithoutListingsInput
-  category: Prisma.CategoryCreateNestedOneWithoutListingsInput
   bids?: Prisma.BidCreateNestedManyWithoutListingInput
-  orders?: Prisma.OrderCreateNestedManyWithoutListingInput
-  favourites?: Prisma.FavouriteCreateNestedManyWithoutListingInput
   conversations?: Prisma.ConversationCreateNestedManyWithoutListingInput
+  favourites?: Prisma.FavouriteCreateNestedManyWithoutListingInput
+  category: Prisma.CategoryCreateNestedOneWithoutListingsInput
+  seller: Prisma.UserCreateNestedOneWithoutListingsInput
+  orders?: Prisma.OrderCreateNestedManyWithoutListingInput
 }
 
 export type ListingUncheckedCreateWithoutImagesInput = {
@@ -1375,9 +1375,9 @@ export type ListingUncheckedCreateWithoutImagesInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   bids?: Prisma.BidUncheckedCreateNestedManyWithoutListingInput
-  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutListingInput
-  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutListingInput
   conversations?: Prisma.ConversationUncheckedCreateNestedManyWithoutListingInput
+  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutListingInput
+  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutListingInput
 }
 
 export type ListingCreateOrConnectWithoutImagesInput = {
@@ -1421,12 +1421,12 @@ export type ListingUpdateWithoutImagesInput = {
   favouritesCount?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  seller?: Prisma.UserUpdateOneRequiredWithoutListingsNestedInput
-  category?: Prisma.CategoryUpdateOneRequiredWithoutListingsNestedInput
   bids?: Prisma.BidUpdateManyWithoutListingNestedInput
-  orders?: Prisma.OrderUpdateManyWithoutListingNestedInput
-  favourites?: Prisma.FavouriteUpdateManyWithoutListingNestedInput
   conversations?: Prisma.ConversationUpdateManyWithoutListingNestedInput
+  favourites?: Prisma.FavouriteUpdateManyWithoutListingNestedInput
+  category?: Prisma.CategoryUpdateOneRequiredWithoutListingsNestedInput
+  seller?: Prisma.UserUpdateOneRequiredWithoutListingsNestedInput
+  orders?: Prisma.OrderUpdateManyWithoutListingNestedInput
 }
 
 export type ListingUncheckedUpdateWithoutImagesInput = {
@@ -1457,9 +1457,9 @@ export type ListingUncheckedUpdateWithoutImagesInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   bids?: Prisma.BidUncheckedUpdateManyWithoutListingNestedInput
-  orders?: Prisma.OrderUncheckedUpdateManyWithoutListingNestedInput
-  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutListingNestedInput
   conversations?: Prisma.ConversationUncheckedUpdateManyWithoutListingNestedInput
+  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutListingNestedInput
+  orders?: Prisma.OrderUncheckedUpdateManyWithoutListingNestedInput
 }
 
 export type ListingCreateWithoutBidsInput = {
@@ -1487,12 +1487,12 @@ export type ListingCreateWithoutBidsInput = {
   favouritesCount?: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  seller: Prisma.UserCreateNestedOneWithoutListingsInput
+  conversations?: Prisma.ConversationCreateNestedManyWithoutListingInput
+  favourites?: Prisma.FavouriteCreateNestedManyWithoutListingInput
   category: Prisma.CategoryCreateNestedOneWithoutListingsInput
+  seller: Prisma.UserCreateNestedOneWithoutListingsInput
   images?: Prisma.ListingImageCreateNestedManyWithoutListingInput
   orders?: Prisma.OrderCreateNestedManyWithoutListingInput
-  favourites?: Prisma.FavouriteCreateNestedManyWithoutListingInput
-  conversations?: Prisma.ConversationCreateNestedManyWithoutListingInput
 }
 
 export type ListingUncheckedCreateWithoutBidsInput = {
@@ -1522,10 +1522,10 @@ export type ListingUncheckedCreateWithoutBidsInput = {
   favouritesCount?: number
   createdAt?: Date | string
   updatedAt?: Date | string
+  conversations?: Prisma.ConversationUncheckedCreateNestedManyWithoutListingInput
+  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutListingInput
   images?: Prisma.ListingImageUncheckedCreateNestedManyWithoutListingInput
   orders?: Prisma.OrderUncheckedCreateNestedManyWithoutListingInput
-  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutListingInput
-  conversations?: Prisma.ConversationUncheckedCreateNestedManyWithoutListingInput
 }
 
 export type ListingCreateOrConnectWithoutBidsInput = {
@@ -1569,12 +1569,12 @@ export type ListingUpdateWithoutBidsInput = {
   favouritesCount?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  seller?: Prisma.UserUpdateOneRequiredWithoutListingsNestedInput
+  conversations?: Prisma.ConversationUpdateManyWithoutListingNestedInput
+  favourites?: Prisma.FavouriteUpdateManyWithoutListingNestedInput
   category?: Prisma.CategoryUpdateOneRequiredWithoutListingsNestedInput
+  seller?: Prisma.UserUpdateOneRequiredWithoutListingsNestedInput
   images?: Prisma.ListingImageUpdateManyWithoutListingNestedInput
   orders?: Prisma.OrderUpdateManyWithoutListingNestedInput
-  favourites?: Prisma.FavouriteUpdateManyWithoutListingNestedInput
-  conversations?: Prisma.ConversationUpdateManyWithoutListingNestedInput
 }
 
 export type ListingUncheckedUpdateWithoutBidsInput = {
@@ -1604,10 +1604,10 @@ export type ListingUncheckedUpdateWithoutBidsInput = {
   favouritesCount?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  conversations?: Prisma.ConversationUncheckedUpdateManyWithoutListingNestedInput
+  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutListingNestedInput
   images?: Prisma.ListingImageUncheckedUpdateManyWithoutListingNestedInput
   orders?: Prisma.OrderUncheckedUpdateManyWithoutListingNestedInput
-  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutListingNestedInput
-  conversations?: Prisma.ConversationUncheckedUpdateManyWithoutListingNestedInput
 }
 
 export type ListingCreateWithoutOrdersInput = {
@@ -1635,12 +1635,12 @@ export type ListingCreateWithoutOrdersInput = {
   favouritesCount?: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  seller: Prisma.UserCreateNestedOneWithoutListingsInput
-  category: Prisma.CategoryCreateNestedOneWithoutListingsInput
-  images?: Prisma.ListingImageCreateNestedManyWithoutListingInput
   bids?: Prisma.BidCreateNestedManyWithoutListingInput
-  favourites?: Prisma.FavouriteCreateNestedManyWithoutListingInput
   conversations?: Prisma.ConversationCreateNestedManyWithoutListingInput
+  favourites?: Prisma.FavouriteCreateNestedManyWithoutListingInput
+  category: Prisma.CategoryCreateNestedOneWithoutListingsInput
+  seller: Prisma.UserCreateNestedOneWithoutListingsInput
+  images?: Prisma.ListingImageCreateNestedManyWithoutListingInput
 }
 
 export type ListingUncheckedCreateWithoutOrdersInput = {
@@ -1670,10 +1670,10 @@ export type ListingUncheckedCreateWithoutOrdersInput = {
   favouritesCount?: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  images?: Prisma.ListingImageUncheckedCreateNestedManyWithoutListingInput
   bids?: Prisma.BidUncheckedCreateNestedManyWithoutListingInput
-  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutListingInput
   conversations?: Prisma.ConversationUncheckedCreateNestedManyWithoutListingInput
+  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutListingInput
+  images?: Prisma.ListingImageUncheckedCreateNestedManyWithoutListingInput
 }
 
 export type ListingCreateOrConnectWithoutOrdersInput = {
@@ -1717,12 +1717,12 @@ export type ListingUpdateWithoutOrdersInput = {
   favouritesCount?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  seller?: Prisma.UserUpdateOneRequiredWithoutListingsNestedInput
-  category?: Prisma.CategoryUpdateOneRequiredWithoutListingsNestedInput
-  images?: Prisma.ListingImageUpdateManyWithoutListingNestedInput
   bids?: Prisma.BidUpdateManyWithoutListingNestedInput
-  favourites?: Prisma.FavouriteUpdateManyWithoutListingNestedInput
   conversations?: Prisma.ConversationUpdateManyWithoutListingNestedInput
+  favourites?: Prisma.FavouriteUpdateManyWithoutListingNestedInput
+  category?: Prisma.CategoryUpdateOneRequiredWithoutListingsNestedInput
+  seller?: Prisma.UserUpdateOneRequiredWithoutListingsNestedInput
+  images?: Prisma.ListingImageUpdateManyWithoutListingNestedInput
 }
 
 export type ListingUncheckedUpdateWithoutOrdersInput = {
@@ -1752,10 +1752,10 @@ export type ListingUncheckedUpdateWithoutOrdersInput = {
   favouritesCount?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  images?: Prisma.ListingImageUncheckedUpdateManyWithoutListingNestedInput
   bids?: Prisma.BidUncheckedUpdateManyWithoutListingNestedInput
-  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutListingNestedInput
   conversations?: Prisma.ConversationUncheckedUpdateManyWithoutListingNestedInput
+  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutListingNestedInput
+  images?: Prisma.ListingImageUncheckedUpdateManyWithoutListingNestedInput
 }
 
 export type ListingCreateWithoutFavouritesInput = {
@@ -1783,12 +1783,12 @@ export type ListingCreateWithoutFavouritesInput = {
   favouritesCount?: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  seller: Prisma.UserCreateNestedOneWithoutListingsInput
-  category: Prisma.CategoryCreateNestedOneWithoutListingsInput
-  images?: Prisma.ListingImageCreateNestedManyWithoutListingInput
   bids?: Prisma.BidCreateNestedManyWithoutListingInput
-  orders?: Prisma.OrderCreateNestedManyWithoutListingInput
   conversations?: Prisma.ConversationCreateNestedManyWithoutListingInput
+  category: Prisma.CategoryCreateNestedOneWithoutListingsInput
+  seller: Prisma.UserCreateNestedOneWithoutListingsInput
+  images?: Prisma.ListingImageCreateNestedManyWithoutListingInput
+  orders?: Prisma.OrderCreateNestedManyWithoutListingInput
 }
 
 export type ListingUncheckedCreateWithoutFavouritesInput = {
@@ -1818,10 +1818,10 @@ export type ListingUncheckedCreateWithoutFavouritesInput = {
   favouritesCount?: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  images?: Prisma.ListingImageUncheckedCreateNestedManyWithoutListingInput
   bids?: Prisma.BidUncheckedCreateNestedManyWithoutListingInput
-  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutListingInput
   conversations?: Prisma.ConversationUncheckedCreateNestedManyWithoutListingInput
+  images?: Prisma.ListingImageUncheckedCreateNestedManyWithoutListingInput
+  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutListingInput
 }
 
 export type ListingCreateOrConnectWithoutFavouritesInput = {
@@ -1865,12 +1865,12 @@ export type ListingUpdateWithoutFavouritesInput = {
   favouritesCount?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  seller?: Prisma.UserUpdateOneRequiredWithoutListingsNestedInput
-  category?: Prisma.CategoryUpdateOneRequiredWithoutListingsNestedInput
-  images?: Prisma.ListingImageUpdateManyWithoutListingNestedInput
   bids?: Prisma.BidUpdateManyWithoutListingNestedInput
-  orders?: Prisma.OrderUpdateManyWithoutListingNestedInput
   conversations?: Prisma.ConversationUpdateManyWithoutListingNestedInput
+  category?: Prisma.CategoryUpdateOneRequiredWithoutListingsNestedInput
+  seller?: Prisma.UserUpdateOneRequiredWithoutListingsNestedInput
+  images?: Prisma.ListingImageUpdateManyWithoutListingNestedInput
+  orders?: Prisma.OrderUpdateManyWithoutListingNestedInput
 }
 
 export type ListingUncheckedUpdateWithoutFavouritesInput = {
@@ -1900,10 +1900,10 @@ export type ListingUncheckedUpdateWithoutFavouritesInput = {
   favouritesCount?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  images?: Prisma.ListingImageUncheckedUpdateManyWithoutListingNestedInput
   bids?: Prisma.BidUncheckedUpdateManyWithoutListingNestedInput
-  orders?: Prisma.OrderUncheckedUpdateManyWithoutListingNestedInput
   conversations?: Prisma.ConversationUncheckedUpdateManyWithoutListingNestedInput
+  images?: Prisma.ListingImageUncheckedUpdateManyWithoutListingNestedInput
+  orders?: Prisma.OrderUncheckedUpdateManyWithoutListingNestedInput
 }
 
 export type ListingCreateWithoutConversationsInput = {
@@ -1931,12 +1931,12 @@ export type ListingCreateWithoutConversationsInput = {
   favouritesCount?: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  seller: Prisma.UserCreateNestedOneWithoutListingsInput
-  category: Prisma.CategoryCreateNestedOneWithoutListingsInput
-  images?: Prisma.ListingImageCreateNestedManyWithoutListingInput
   bids?: Prisma.BidCreateNestedManyWithoutListingInput
-  orders?: Prisma.OrderCreateNestedManyWithoutListingInput
   favourites?: Prisma.FavouriteCreateNestedManyWithoutListingInput
+  category: Prisma.CategoryCreateNestedOneWithoutListingsInput
+  seller: Prisma.UserCreateNestedOneWithoutListingsInput
+  images?: Prisma.ListingImageCreateNestedManyWithoutListingInput
+  orders?: Prisma.OrderCreateNestedManyWithoutListingInput
 }
 
 export type ListingUncheckedCreateWithoutConversationsInput = {
@@ -1966,10 +1966,10 @@ export type ListingUncheckedCreateWithoutConversationsInput = {
   favouritesCount?: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  images?: Prisma.ListingImageUncheckedCreateNestedManyWithoutListingInput
   bids?: Prisma.BidUncheckedCreateNestedManyWithoutListingInput
-  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutListingInput
   favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutListingInput
+  images?: Prisma.ListingImageUncheckedCreateNestedManyWithoutListingInput
+  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutListingInput
 }
 
 export type ListingCreateOrConnectWithoutConversationsInput = {
@@ -2013,12 +2013,12 @@ export type ListingUpdateWithoutConversationsInput = {
   favouritesCount?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  seller?: Prisma.UserUpdateOneRequiredWithoutListingsNestedInput
-  category?: Prisma.CategoryUpdateOneRequiredWithoutListingsNestedInput
-  images?: Prisma.ListingImageUpdateManyWithoutListingNestedInput
   bids?: Prisma.BidUpdateManyWithoutListingNestedInput
-  orders?: Prisma.OrderUpdateManyWithoutListingNestedInput
   favourites?: Prisma.FavouriteUpdateManyWithoutListingNestedInput
+  category?: Prisma.CategoryUpdateOneRequiredWithoutListingsNestedInput
+  seller?: Prisma.UserUpdateOneRequiredWithoutListingsNestedInput
+  images?: Prisma.ListingImageUpdateManyWithoutListingNestedInput
+  orders?: Prisma.OrderUpdateManyWithoutListingNestedInput
 }
 
 export type ListingUncheckedUpdateWithoutConversationsInput = {
@@ -2048,10 +2048,10 @@ export type ListingUncheckedUpdateWithoutConversationsInput = {
   favouritesCount?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  images?: Prisma.ListingImageUncheckedUpdateManyWithoutListingNestedInput
   bids?: Prisma.BidUncheckedUpdateManyWithoutListingNestedInput
-  orders?: Prisma.OrderUncheckedUpdateManyWithoutListingNestedInput
   favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutListingNestedInput
+  images?: Prisma.ListingImageUncheckedUpdateManyWithoutListingNestedInput
+  orders?: Prisma.OrderUncheckedUpdateManyWithoutListingNestedInput
 }
 
 export type ListingCreateManySellerInput = {
@@ -2107,12 +2107,12 @@ export type ListingUpdateWithoutSellerInput = {
   favouritesCount?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  bids?: Prisma.BidUpdateManyWithoutListingNestedInput
+  conversations?: Prisma.ConversationUpdateManyWithoutListingNestedInput
+  favourites?: Prisma.FavouriteUpdateManyWithoutListingNestedInput
   category?: Prisma.CategoryUpdateOneRequiredWithoutListingsNestedInput
   images?: Prisma.ListingImageUpdateManyWithoutListingNestedInput
-  bids?: Prisma.BidUpdateManyWithoutListingNestedInput
   orders?: Prisma.OrderUpdateManyWithoutListingNestedInput
-  favourites?: Prisma.FavouriteUpdateManyWithoutListingNestedInput
-  conversations?: Prisma.ConversationUpdateManyWithoutListingNestedInput
 }
 
 export type ListingUncheckedUpdateWithoutSellerInput = {
@@ -2141,11 +2141,11 @@ export type ListingUncheckedUpdateWithoutSellerInput = {
   favouritesCount?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  images?: Prisma.ListingImageUncheckedUpdateManyWithoutListingNestedInput
   bids?: Prisma.BidUncheckedUpdateManyWithoutListingNestedInput
-  orders?: Prisma.OrderUncheckedUpdateManyWithoutListingNestedInput
-  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutListingNestedInput
   conversations?: Prisma.ConversationUncheckedUpdateManyWithoutListingNestedInput
+  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutListingNestedInput
+  images?: Prisma.ListingImageUncheckedUpdateManyWithoutListingNestedInput
+  orders?: Prisma.OrderUncheckedUpdateManyWithoutListingNestedInput
 }
 
 export type ListingUncheckedUpdateManyWithoutSellerInput = {
@@ -2229,12 +2229,12 @@ export type ListingUpdateWithoutCategoryInput = {
   favouritesCount?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  bids?: Prisma.BidUpdateManyWithoutListingNestedInput
+  conversations?: Prisma.ConversationUpdateManyWithoutListingNestedInput
+  favourites?: Prisma.FavouriteUpdateManyWithoutListingNestedInput
   seller?: Prisma.UserUpdateOneRequiredWithoutListingsNestedInput
   images?: Prisma.ListingImageUpdateManyWithoutListingNestedInput
-  bids?: Prisma.BidUpdateManyWithoutListingNestedInput
   orders?: Prisma.OrderUpdateManyWithoutListingNestedInput
-  favourites?: Prisma.FavouriteUpdateManyWithoutListingNestedInput
-  conversations?: Prisma.ConversationUpdateManyWithoutListingNestedInput
 }
 
 export type ListingUncheckedUpdateWithoutCategoryInput = {
@@ -2263,11 +2263,11 @@ export type ListingUncheckedUpdateWithoutCategoryInput = {
   favouritesCount?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  images?: Prisma.ListingImageUncheckedUpdateManyWithoutListingNestedInput
   bids?: Prisma.BidUncheckedUpdateManyWithoutListingNestedInput
-  orders?: Prisma.OrderUncheckedUpdateManyWithoutListingNestedInput
-  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutListingNestedInput
   conversations?: Prisma.ConversationUncheckedUpdateManyWithoutListingNestedInput
+  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutListingNestedInput
+  images?: Prisma.ListingImageUncheckedUpdateManyWithoutListingNestedInput
+  orders?: Prisma.OrderUncheckedUpdateManyWithoutListingNestedInput
 }
 
 export type ListingUncheckedUpdateManyWithoutCategoryInput = {
@@ -2304,19 +2304,19 @@ export type ListingUncheckedUpdateManyWithoutCategoryInput = {
  */
 
 export type ListingCountOutputType = {
-  images: number
   bids: number
-  orders: number
-  favourites: number
   conversations: number
+  favourites: number
+  images: number
+  orders: number
 }
 
 export type ListingCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  images?: boolean | ListingCountOutputTypeCountImagesArgs
   bids?: boolean | ListingCountOutputTypeCountBidsArgs
-  orders?: boolean | ListingCountOutputTypeCountOrdersArgs
-  favourites?: boolean | ListingCountOutputTypeCountFavouritesArgs
   conversations?: boolean | ListingCountOutputTypeCountConversationsArgs
+  favourites?: boolean | ListingCountOutputTypeCountFavouritesArgs
+  images?: boolean | ListingCountOutputTypeCountImagesArgs
+  orders?: boolean | ListingCountOutputTypeCountOrdersArgs
 }
 
 /**
@@ -2332,13 +2332,6 @@ export type ListingCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Exte
 /**
  * ListingCountOutputType without action
  */
-export type ListingCountOutputTypeCountImagesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ListingImageWhereInput
-}
-
-/**
- * ListingCountOutputType without action
- */
 export type ListingCountOutputTypeCountBidsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.BidWhereInput
 }
@@ -2346,8 +2339,8 @@ export type ListingCountOutputTypeCountBidsArgs<ExtArgs extends runtime.Types.Ex
 /**
  * ListingCountOutputType without action
  */
-export type ListingCountOutputTypeCountOrdersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.OrderWhereInput
+export type ListingCountOutputTypeCountConversationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ConversationWhereInput
 }
 
 /**
@@ -2360,8 +2353,15 @@ export type ListingCountOutputTypeCountFavouritesArgs<ExtArgs extends runtime.Ty
 /**
  * ListingCountOutputType without action
  */
-export type ListingCountOutputTypeCountConversationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ConversationWhereInput
+export type ListingCountOutputTypeCountImagesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ListingImageWhereInput
+}
+
+/**
+ * ListingCountOutputType without action
+ */
+export type ListingCountOutputTypeCountOrdersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.OrderWhereInput
 }
 
 
@@ -2392,13 +2392,13 @@ export type ListingSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   favouritesCount?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  seller?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  category?: boolean | Prisma.CategoryDefaultArgs<ExtArgs>
-  images?: boolean | Prisma.Listing$imagesArgs<ExtArgs>
   bids?: boolean | Prisma.Listing$bidsArgs<ExtArgs>
-  orders?: boolean | Prisma.Listing$ordersArgs<ExtArgs>
-  favourites?: boolean | Prisma.Listing$favouritesArgs<ExtArgs>
   conversations?: boolean | Prisma.Listing$conversationsArgs<ExtArgs>
+  favourites?: boolean | Prisma.Listing$favouritesArgs<ExtArgs>
+  category?: boolean | Prisma.CategoryDefaultArgs<ExtArgs>
+  seller?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  images?: boolean | Prisma.Listing$imagesArgs<ExtArgs>
+  orders?: boolean | Prisma.Listing$ordersArgs<ExtArgs>
   _count?: boolean | Prisma.ListingCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["listing"]>
 
@@ -2429,8 +2429,8 @@ export type ListingSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   favouritesCount?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  seller?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   category?: boolean | Prisma.CategoryDefaultArgs<ExtArgs>
+  seller?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["listing"]>
 
 export type ListingSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -2460,8 +2460,8 @@ export type ListingSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   favouritesCount?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  seller?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   category?: boolean | Prisma.CategoryDefaultArgs<ExtArgs>
+  seller?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["listing"]>
 
 export type ListingSelectScalar = {
@@ -2495,34 +2495,34 @@ export type ListingSelectScalar = {
 
 export type ListingOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "sellerId" | "categoryId" | "title" | "description" | "condition" | "pricingType" | "price" | "startingPrice" | "buyNowPrice" | "currentPrice" | "minBidIncrement" | "auctionStartAt" | "auctionEndAt" | "status" | "address" | "city" | "state" | "country" | "pincode" | "latitude" | "longitude" | "viewsCount" | "favouritesCount" | "createdAt" | "updatedAt", ExtArgs["result"]["listing"]>
 export type ListingInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  seller?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  category?: boolean | Prisma.CategoryDefaultArgs<ExtArgs>
-  images?: boolean | Prisma.Listing$imagesArgs<ExtArgs>
   bids?: boolean | Prisma.Listing$bidsArgs<ExtArgs>
-  orders?: boolean | Prisma.Listing$ordersArgs<ExtArgs>
-  favourites?: boolean | Prisma.Listing$favouritesArgs<ExtArgs>
   conversations?: boolean | Prisma.Listing$conversationsArgs<ExtArgs>
+  favourites?: boolean | Prisma.Listing$favouritesArgs<ExtArgs>
+  category?: boolean | Prisma.CategoryDefaultArgs<ExtArgs>
+  seller?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  images?: boolean | Prisma.Listing$imagesArgs<ExtArgs>
+  orders?: boolean | Prisma.Listing$ordersArgs<ExtArgs>
   _count?: boolean | Prisma.ListingCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type ListingIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  seller?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   category?: boolean | Prisma.CategoryDefaultArgs<ExtArgs>
+  seller?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
 export type ListingIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  seller?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   category?: boolean | Prisma.CategoryDefaultArgs<ExtArgs>
+  seller?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
 
 export type $ListingPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Listing"
   objects: {
-    seller: Prisma.$UserPayload<ExtArgs>
-    category: Prisma.$CategoryPayload<ExtArgs>
-    images: Prisma.$ListingImagePayload<ExtArgs>[]
     bids: Prisma.$BidPayload<ExtArgs>[]
-    orders: Prisma.$OrderPayload<ExtArgs>[]
-    favourites: Prisma.$FavouritePayload<ExtArgs>[]
     conversations: Prisma.$ConversationPayload<ExtArgs>[]
+    favourites: Prisma.$FavouritePayload<ExtArgs>[]
+    category: Prisma.$CategoryPayload<ExtArgs>
+    seller: Prisma.$UserPayload<ExtArgs>
+    images: Prisma.$ListingImagePayload<ExtArgs>[]
+    orders: Prisma.$OrderPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -2945,13 +2945,13 @@ readonly fields: ListingFieldRefs;
  */
 export interface Prisma__ListingClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  seller<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  category<T extends Prisma.CategoryDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.CategoryDefaultArgs<ExtArgs>>): Prisma.Prisma__CategoryClient<runtime.Types.Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  images<T extends Prisma.Listing$imagesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Listing$imagesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ListingImagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   bids<T extends Prisma.Listing$bidsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Listing$bidsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BidPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  orders<T extends Prisma.Listing$ordersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Listing$ordersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$OrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  favourites<T extends Prisma.Listing$favouritesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Listing$favouritesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FavouritePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   conversations<T extends Prisma.Listing$conversationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Listing$conversationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  favourites<T extends Prisma.Listing$favouritesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Listing$favouritesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FavouritePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  category<T extends Prisma.CategoryDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.CategoryDefaultArgs<ExtArgs>>): Prisma.Prisma__CategoryClient<runtime.Types.Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  seller<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  images<T extends Prisma.Listing$imagesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Listing$imagesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ListingImagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  orders<T extends Prisma.Listing$ordersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Listing$ordersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$OrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3403,30 +3403,6 @@ export type ListingDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Inter
 }
 
 /**
- * Listing.images
- */
-export type Listing$imagesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the ListingImage
-   */
-  select?: Prisma.ListingImageSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the ListingImage
-   */
-  omit?: Prisma.ListingImageOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.ListingImageInclude<ExtArgs> | null
-  where?: Prisma.ListingImageWhereInput
-  orderBy?: Prisma.ListingImageOrderByWithRelationInput | Prisma.ListingImageOrderByWithRelationInput[]
-  cursor?: Prisma.ListingImageWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.ListingImageScalarFieldEnum | Prisma.ListingImageScalarFieldEnum[]
-}
-
-/**
  * Listing.bids
  */
 export type Listing$bidsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -3451,27 +3427,27 @@ export type Listing$bidsArgs<ExtArgs extends runtime.Types.Extensions.InternalAr
 }
 
 /**
- * Listing.orders
+ * Listing.conversations
  */
-export type Listing$ordersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Listing$conversationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Order
+   * Select specific fields to fetch from the Conversation
    */
-  select?: Prisma.OrderSelect<ExtArgs> | null
+  select?: Prisma.ConversationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Order
+   * Omit specific fields from the Conversation
    */
-  omit?: Prisma.OrderOmit<ExtArgs> | null
+  omit?: Prisma.ConversationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.OrderInclude<ExtArgs> | null
-  where?: Prisma.OrderWhereInput
-  orderBy?: Prisma.OrderOrderByWithRelationInput | Prisma.OrderOrderByWithRelationInput[]
-  cursor?: Prisma.OrderWhereUniqueInput
+  include?: Prisma.ConversationInclude<ExtArgs> | null
+  where?: Prisma.ConversationWhereInput
+  orderBy?: Prisma.ConversationOrderByWithRelationInput | Prisma.ConversationOrderByWithRelationInput[]
+  cursor?: Prisma.ConversationWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.OrderScalarFieldEnum | Prisma.OrderScalarFieldEnum[]
+  distinct?: Prisma.ConversationScalarFieldEnum | Prisma.ConversationScalarFieldEnum[]
 }
 
 /**
@@ -3499,27 +3475,51 @@ export type Listing$favouritesArgs<ExtArgs extends runtime.Types.Extensions.Inte
 }
 
 /**
- * Listing.conversations
+ * Listing.images
  */
-export type Listing$conversationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Listing$imagesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Conversation
+   * Select specific fields to fetch from the ListingImage
    */
-  select?: Prisma.ConversationSelect<ExtArgs> | null
+  select?: Prisma.ListingImageSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Conversation
+   * Omit specific fields from the ListingImage
    */
-  omit?: Prisma.ConversationOmit<ExtArgs> | null
+  omit?: Prisma.ListingImageOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ConversationInclude<ExtArgs> | null
-  where?: Prisma.ConversationWhereInput
-  orderBy?: Prisma.ConversationOrderByWithRelationInput | Prisma.ConversationOrderByWithRelationInput[]
-  cursor?: Prisma.ConversationWhereUniqueInput
+  include?: Prisma.ListingImageInclude<ExtArgs> | null
+  where?: Prisma.ListingImageWhereInput
+  orderBy?: Prisma.ListingImageOrderByWithRelationInput | Prisma.ListingImageOrderByWithRelationInput[]
+  cursor?: Prisma.ListingImageWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.ConversationScalarFieldEnum | Prisma.ConversationScalarFieldEnum[]
+  distinct?: Prisma.ListingImageScalarFieldEnum | Prisma.ListingImageScalarFieldEnum[]
+}
+
+/**
+ * Listing.orders
+ */
+export type Listing$ordersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Order
+   */
+  select?: Prisma.OrderSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Order
+   */
+  omit?: Prisma.OrderOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.OrderInclude<ExtArgs> | null
+  where?: Prisma.OrderWhereInput
+  orderBy?: Prisma.OrderOrderByWithRelationInput | Prisma.OrderOrderByWithRelationInput[]
+  cursor?: Prisma.OrderWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.OrderScalarFieldEnum | Prisma.OrderScalarFieldEnum[]
 }
 
 /**
