@@ -9,8 +9,8 @@
  * 🟢 You can import this file directly.
  */
 import type * as runtime from "@prisma/client/runtime/client"
-import type * as $Enums from "../enums.js"
-import type * as Prisma from "../internal/prismaNamespace.js"
+import type * as $Enums from "../enums"
+import type * as Prisma from "../internal/prismaNamespace"
 
 /**
  * Model User
@@ -324,16 +324,16 @@ export type UserWhereInput = {
   isVerified?: Prisma.BoolFilter<"User"> | boolean
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
-  listings?: Prisma.ListingListRelationFilter
   bids?: Prisma.BidListRelationFilter
-  ordersAsBuyer?: Prisma.OrderListRelationFilter
-  ordersAsSeller?: Prisma.OrderListRelationFilter
-  favourites?: Prisma.FavouriteListRelationFilter
   conversationsCreated?: Prisma.ConversationListRelationFilter
   conversationParticipants?: Prisma.ConversationParticipantListRelationFilter
+  favourites?: Prisma.FavouriteListRelationFilter
+  listings?: Prisma.ListingListRelationFilter
   messages?: Prisma.MessageListRelationFilter
-  reviewsGiven?: Prisma.ReviewListRelationFilter
+  ordersAsBuyer?: Prisma.OrderListRelationFilter
+  ordersAsSeller?: Prisma.OrderListRelationFilter
   reviewsReceived?: Prisma.ReviewListRelationFilter
+  reviewsGiven?: Prisma.ReviewListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -355,16 +355,16 @@ export type UserOrderByWithRelationInput = {
   isVerified?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  listings?: Prisma.ListingOrderByRelationAggregateInput
   bids?: Prisma.BidOrderByRelationAggregateInput
-  ordersAsBuyer?: Prisma.OrderOrderByRelationAggregateInput
-  ordersAsSeller?: Prisma.OrderOrderByRelationAggregateInput
-  favourites?: Prisma.FavouriteOrderByRelationAggregateInput
   conversationsCreated?: Prisma.ConversationOrderByRelationAggregateInput
   conversationParticipants?: Prisma.ConversationParticipantOrderByRelationAggregateInput
+  favourites?: Prisma.FavouriteOrderByRelationAggregateInput
+  listings?: Prisma.ListingOrderByRelationAggregateInput
   messages?: Prisma.MessageOrderByRelationAggregateInput
-  reviewsGiven?: Prisma.ReviewOrderByRelationAggregateInput
+  ordersAsBuyer?: Prisma.OrderOrderByRelationAggregateInput
+  ordersAsSeller?: Prisma.OrderOrderByRelationAggregateInput
   reviewsReceived?: Prisma.ReviewOrderByRelationAggregateInput
+  reviewsGiven?: Prisma.ReviewOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -389,16 +389,16 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   isVerified?: Prisma.BoolFilter<"User"> | boolean
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
-  listings?: Prisma.ListingListRelationFilter
   bids?: Prisma.BidListRelationFilter
-  ordersAsBuyer?: Prisma.OrderListRelationFilter
-  ordersAsSeller?: Prisma.OrderListRelationFilter
-  favourites?: Prisma.FavouriteListRelationFilter
   conversationsCreated?: Prisma.ConversationListRelationFilter
   conversationParticipants?: Prisma.ConversationParticipantListRelationFilter
+  favourites?: Prisma.FavouriteListRelationFilter
+  listings?: Prisma.ListingListRelationFilter
   messages?: Prisma.MessageListRelationFilter
-  reviewsGiven?: Prisma.ReviewListRelationFilter
+  ordersAsBuyer?: Prisma.OrderListRelationFilter
+  ordersAsSeller?: Prisma.OrderListRelationFilter
   reviewsReceived?: Prisma.ReviewListRelationFilter
+  reviewsGiven?: Prisma.ReviewListRelationFilter
 }, "id" | "email" | "phone">
 
 export type UserOrderByWithAggregationInput = {
@@ -470,16 +470,16 @@ export type UserCreateInput = {
   isVerified?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  listings?: Prisma.ListingCreateNestedManyWithoutSellerInput
   bids?: Prisma.BidCreateNestedManyWithoutBidderInput
-  ordersAsBuyer?: Prisma.OrderCreateNestedManyWithoutBuyerInput
-  ordersAsSeller?: Prisma.OrderCreateNestedManyWithoutSellerInput
-  favourites?: Prisma.FavouriteCreateNestedManyWithoutUserInput
   conversationsCreated?: Prisma.ConversationCreateNestedManyWithoutCreatedByInput
   conversationParticipants?: Prisma.ConversationParticipantCreateNestedManyWithoutUserInput
+  favourites?: Prisma.FavouriteCreateNestedManyWithoutUserInput
+  listings?: Prisma.ListingCreateNestedManyWithoutSellerInput
   messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  reviewsGiven?: Prisma.ReviewCreateNestedManyWithoutReviewerInput
+  ordersAsBuyer?: Prisma.OrderCreateNestedManyWithoutBuyerInput
+  ordersAsSeller?: Prisma.OrderCreateNestedManyWithoutSellerInput
   reviewsReceived?: Prisma.ReviewCreateNestedManyWithoutRevieweeInput
+  reviewsGiven?: Prisma.ReviewCreateNestedManyWithoutReviewerInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -501,16 +501,16 @@ export type UserUncheckedCreateInput = {
   isVerified?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  listings?: Prisma.ListingUncheckedCreateNestedManyWithoutSellerInput
   bids?: Prisma.BidUncheckedCreateNestedManyWithoutBidderInput
-  ordersAsBuyer?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
-  ordersAsSeller?: Prisma.OrderUncheckedCreateNestedManyWithoutSellerInput
-  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutUserInput
   conversationsCreated?: Prisma.ConversationUncheckedCreateNestedManyWithoutCreatedByInput
   conversationParticipants?: Prisma.ConversationParticipantUncheckedCreateNestedManyWithoutUserInput
+  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutUserInput
+  listings?: Prisma.ListingUncheckedCreateNestedManyWithoutSellerInput
   messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  reviewsGiven?: Prisma.ReviewUncheckedCreateNestedManyWithoutReviewerInput
+  ordersAsBuyer?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
+  ordersAsSeller?: Prisma.OrderUncheckedCreateNestedManyWithoutSellerInput
   reviewsReceived?: Prisma.ReviewUncheckedCreateNestedManyWithoutRevieweeInput
+  reviewsGiven?: Prisma.ReviewUncheckedCreateNestedManyWithoutReviewerInput
 }
 
 export type UserUpdateInput = {
@@ -532,16 +532,16 @@ export type UserUpdateInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  listings?: Prisma.ListingUpdateManyWithoutSellerNestedInput
   bids?: Prisma.BidUpdateManyWithoutBidderNestedInput
-  ordersAsBuyer?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
-  ordersAsSeller?: Prisma.OrderUpdateManyWithoutSellerNestedInput
-  favourites?: Prisma.FavouriteUpdateManyWithoutUserNestedInput
   conversationsCreated?: Prisma.ConversationUpdateManyWithoutCreatedByNestedInput
   conversationParticipants?: Prisma.ConversationParticipantUpdateManyWithoutUserNestedInput
+  favourites?: Prisma.FavouriteUpdateManyWithoutUserNestedInput
+  listings?: Prisma.ListingUpdateManyWithoutSellerNestedInput
   messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  reviewsGiven?: Prisma.ReviewUpdateManyWithoutReviewerNestedInput
+  ordersAsBuyer?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
+  ordersAsSeller?: Prisma.OrderUpdateManyWithoutSellerNestedInput
   reviewsReceived?: Prisma.ReviewUpdateManyWithoutRevieweeNestedInput
+  reviewsGiven?: Prisma.ReviewUpdateManyWithoutReviewerNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -563,16 +563,16 @@ export type UserUncheckedUpdateInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  listings?: Prisma.ListingUncheckedUpdateManyWithoutSellerNestedInput
   bids?: Prisma.BidUncheckedUpdateManyWithoutBidderNestedInput
-  ordersAsBuyer?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
-  ordersAsSeller?: Prisma.OrderUncheckedUpdateManyWithoutSellerNestedInput
-  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutUserNestedInput
   conversationsCreated?: Prisma.ConversationUncheckedUpdateManyWithoutCreatedByNestedInput
   conversationParticipants?: Prisma.ConversationParticipantUncheckedUpdateManyWithoutUserNestedInput
+  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutUserNestedInput
+  listings?: Prisma.ListingUncheckedUpdateManyWithoutSellerNestedInput
   messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  reviewsGiven?: Prisma.ReviewUncheckedUpdateManyWithoutReviewerNestedInput
+  ordersAsBuyer?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
+  ordersAsSeller?: Prisma.OrderUncheckedUpdateManyWithoutSellerNestedInput
   reviewsReceived?: Prisma.ReviewUncheckedUpdateManyWithoutRevieweeNestedInput
+  reviewsGiven?: Prisma.ReviewUncheckedUpdateManyWithoutReviewerNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -864,24 +864,16 @@ export type UserUpdateOneRequiredWithoutMessagesNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutMessagesInput, Prisma.UserUpdateWithoutMessagesInput>, Prisma.UserUncheckedUpdateWithoutMessagesInput>
 }
 
-export type UserCreateNestedOneWithoutReviewsGivenInput = {
-  create?: Prisma.XOR<Prisma.UserCreateWithoutReviewsGivenInput, Prisma.UserUncheckedCreateWithoutReviewsGivenInput>
-  connectOrCreate?: Prisma.UserCreateOrConnectWithoutReviewsGivenInput
-  connect?: Prisma.UserWhereUniqueInput
-}
-
 export type UserCreateNestedOneWithoutReviewsReceivedInput = {
   create?: Prisma.XOR<Prisma.UserCreateWithoutReviewsReceivedInput, Prisma.UserUncheckedCreateWithoutReviewsReceivedInput>
   connectOrCreate?: Prisma.UserCreateOrConnectWithoutReviewsReceivedInput
   connect?: Prisma.UserWhereUniqueInput
 }
 
-export type UserUpdateOneRequiredWithoutReviewsGivenNestedInput = {
+export type UserCreateNestedOneWithoutReviewsGivenInput = {
   create?: Prisma.XOR<Prisma.UserCreateWithoutReviewsGivenInput, Prisma.UserUncheckedCreateWithoutReviewsGivenInput>
   connectOrCreate?: Prisma.UserCreateOrConnectWithoutReviewsGivenInput
-  upsert?: Prisma.UserUpsertWithoutReviewsGivenInput
   connect?: Prisma.UserWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutReviewsGivenInput, Prisma.UserUpdateWithoutReviewsGivenInput>, Prisma.UserUncheckedUpdateWithoutReviewsGivenInput>
 }
 
 export type UserUpdateOneRequiredWithoutReviewsReceivedNestedInput = {
@@ -890,6 +882,14 @@ export type UserUpdateOneRequiredWithoutReviewsReceivedNestedInput = {
   upsert?: Prisma.UserUpsertWithoutReviewsReceivedInput
   connect?: Prisma.UserWhereUniqueInput
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutReviewsReceivedInput, Prisma.UserUpdateWithoutReviewsReceivedInput>, Prisma.UserUncheckedUpdateWithoutReviewsReceivedInput>
+}
+
+export type UserUpdateOneRequiredWithoutReviewsGivenNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutReviewsGivenInput, Prisma.UserUncheckedCreateWithoutReviewsGivenInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutReviewsGivenInput
+  upsert?: Prisma.UserUpsertWithoutReviewsGivenInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutReviewsGivenInput, Prisma.UserUpdateWithoutReviewsGivenInput>, Prisma.UserUncheckedUpdateWithoutReviewsGivenInput>
 }
 
 export type UserCreateWithoutListingsInput = {
@@ -912,14 +912,14 @@ export type UserCreateWithoutListingsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   bids?: Prisma.BidCreateNestedManyWithoutBidderInput
-  ordersAsBuyer?: Prisma.OrderCreateNestedManyWithoutBuyerInput
-  ordersAsSeller?: Prisma.OrderCreateNestedManyWithoutSellerInput
-  favourites?: Prisma.FavouriteCreateNestedManyWithoutUserInput
   conversationsCreated?: Prisma.ConversationCreateNestedManyWithoutCreatedByInput
   conversationParticipants?: Prisma.ConversationParticipantCreateNestedManyWithoutUserInput
+  favourites?: Prisma.FavouriteCreateNestedManyWithoutUserInput
   messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  reviewsGiven?: Prisma.ReviewCreateNestedManyWithoutReviewerInput
+  ordersAsBuyer?: Prisma.OrderCreateNestedManyWithoutBuyerInput
+  ordersAsSeller?: Prisma.OrderCreateNestedManyWithoutSellerInput
   reviewsReceived?: Prisma.ReviewCreateNestedManyWithoutRevieweeInput
+  reviewsGiven?: Prisma.ReviewCreateNestedManyWithoutReviewerInput
 }
 
 export type UserUncheckedCreateWithoutListingsInput = {
@@ -942,14 +942,14 @@ export type UserUncheckedCreateWithoutListingsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   bids?: Prisma.BidUncheckedCreateNestedManyWithoutBidderInput
-  ordersAsBuyer?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
-  ordersAsSeller?: Prisma.OrderUncheckedCreateNestedManyWithoutSellerInput
-  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutUserInput
   conversationsCreated?: Prisma.ConversationUncheckedCreateNestedManyWithoutCreatedByInput
   conversationParticipants?: Prisma.ConversationParticipantUncheckedCreateNestedManyWithoutUserInput
+  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutUserInput
   messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  reviewsGiven?: Prisma.ReviewUncheckedCreateNestedManyWithoutReviewerInput
+  ordersAsBuyer?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
+  ordersAsSeller?: Prisma.OrderUncheckedCreateNestedManyWithoutSellerInput
   reviewsReceived?: Prisma.ReviewUncheckedCreateNestedManyWithoutRevieweeInput
+  reviewsGiven?: Prisma.ReviewUncheckedCreateNestedManyWithoutReviewerInput
 }
 
 export type UserCreateOrConnectWithoutListingsInput = {
@@ -988,14 +988,14 @@ export type UserUpdateWithoutListingsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   bids?: Prisma.BidUpdateManyWithoutBidderNestedInput
-  ordersAsBuyer?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
-  ordersAsSeller?: Prisma.OrderUpdateManyWithoutSellerNestedInput
-  favourites?: Prisma.FavouriteUpdateManyWithoutUserNestedInput
   conversationsCreated?: Prisma.ConversationUpdateManyWithoutCreatedByNestedInput
   conversationParticipants?: Prisma.ConversationParticipantUpdateManyWithoutUserNestedInput
+  favourites?: Prisma.FavouriteUpdateManyWithoutUserNestedInput
   messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  reviewsGiven?: Prisma.ReviewUpdateManyWithoutReviewerNestedInput
+  ordersAsBuyer?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
+  ordersAsSeller?: Prisma.OrderUpdateManyWithoutSellerNestedInput
   reviewsReceived?: Prisma.ReviewUpdateManyWithoutRevieweeNestedInput
+  reviewsGiven?: Prisma.ReviewUpdateManyWithoutReviewerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutListingsInput = {
@@ -1018,14 +1018,14 @@ export type UserUncheckedUpdateWithoutListingsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   bids?: Prisma.BidUncheckedUpdateManyWithoutBidderNestedInput
-  ordersAsBuyer?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
-  ordersAsSeller?: Prisma.OrderUncheckedUpdateManyWithoutSellerNestedInput
-  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutUserNestedInput
   conversationsCreated?: Prisma.ConversationUncheckedUpdateManyWithoutCreatedByNestedInput
   conversationParticipants?: Prisma.ConversationParticipantUncheckedUpdateManyWithoutUserNestedInput
+  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutUserNestedInput
   messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  reviewsGiven?: Prisma.ReviewUncheckedUpdateManyWithoutReviewerNestedInput
+  ordersAsBuyer?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
+  ordersAsSeller?: Prisma.OrderUncheckedUpdateManyWithoutSellerNestedInput
   reviewsReceived?: Prisma.ReviewUncheckedUpdateManyWithoutRevieweeNestedInput
+  reviewsGiven?: Prisma.ReviewUncheckedUpdateManyWithoutReviewerNestedInput
 }
 
 export type UserCreateWithoutBidsInput = {
@@ -1047,15 +1047,15 @@ export type UserCreateWithoutBidsInput = {
   isVerified?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  listings?: Prisma.ListingCreateNestedManyWithoutSellerInput
-  ordersAsBuyer?: Prisma.OrderCreateNestedManyWithoutBuyerInput
-  ordersAsSeller?: Prisma.OrderCreateNestedManyWithoutSellerInput
-  favourites?: Prisma.FavouriteCreateNestedManyWithoutUserInput
   conversationsCreated?: Prisma.ConversationCreateNestedManyWithoutCreatedByInput
   conversationParticipants?: Prisma.ConversationParticipantCreateNestedManyWithoutUserInput
+  favourites?: Prisma.FavouriteCreateNestedManyWithoutUserInput
+  listings?: Prisma.ListingCreateNestedManyWithoutSellerInput
   messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  reviewsGiven?: Prisma.ReviewCreateNestedManyWithoutReviewerInput
+  ordersAsBuyer?: Prisma.OrderCreateNestedManyWithoutBuyerInput
+  ordersAsSeller?: Prisma.OrderCreateNestedManyWithoutSellerInput
   reviewsReceived?: Prisma.ReviewCreateNestedManyWithoutRevieweeInput
+  reviewsGiven?: Prisma.ReviewCreateNestedManyWithoutReviewerInput
 }
 
 export type UserUncheckedCreateWithoutBidsInput = {
@@ -1077,15 +1077,15 @@ export type UserUncheckedCreateWithoutBidsInput = {
   isVerified?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  listings?: Prisma.ListingUncheckedCreateNestedManyWithoutSellerInput
-  ordersAsBuyer?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
-  ordersAsSeller?: Prisma.OrderUncheckedCreateNestedManyWithoutSellerInput
-  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutUserInput
   conversationsCreated?: Prisma.ConversationUncheckedCreateNestedManyWithoutCreatedByInput
   conversationParticipants?: Prisma.ConversationParticipantUncheckedCreateNestedManyWithoutUserInput
+  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutUserInput
+  listings?: Prisma.ListingUncheckedCreateNestedManyWithoutSellerInput
   messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  reviewsGiven?: Prisma.ReviewUncheckedCreateNestedManyWithoutReviewerInput
+  ordersAsBuyer?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
+  ordersAsSeller?: Prisma.OrderUncheckedCreateNestedManyWithoutSellerInput
   reviewsReceived?: Prisma.ReviewUncheckedCreateNestedManyWithoutRevieweeInput
+  reviewsGiven?: Prisma.ReviewUncheckedCreateNestedManyWithoutReviewerInput
 }
 
 export type UserCreateOrConnectWithoutBidsInput = {
@@ -1123,15 +1123,15 @@ export type UserUpdateWithoutBidsInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  listings?: Prisma.ListingUpdateManyWithoutSellerNestedInput
-  ordersAsBuyer?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
-  ordersAsSeller?: Prisma.OrderUpdateManyWithoutSellerNestedInput
-  favourites?: Prisma.FavouriteUpdateManyWithoutUserNestedInput
   conversationsCreated?: Prisma.ConversationUpdateManyWithoutCreatedByNestedInput
   conversationParticipants?: Prisma.ConversationParticipantUpdateManyWithoutUserNestedInput
+  favourites?: Prisma.FavouriteUpdateManyWithoutUserNestedInput
+  listings?: Prisma.ListingUpdateManyWithoutSellerNestedInput
   messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  reviewsGiven?: Prisma.ReviewUpdateManyWithoutReviewerNestedInput
+  ordersAsBuyer?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
+  ordersAsSeller?: Prisma.OrderUpdateManyWithoutSellerNestedInput
   reviewsReceived?: Prisma.ReviewUpdateManyWithoutRevieweeNestedInput
+  reviewsGiven?: Prisma.ReviewUpdateManyWithoutReviewerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutBidsInput = {
@@ -1153,15 +1153,15 @@ export type UserUncheckedUpdateWithoutBidsInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  listings?: Prisma.ListingUncheckedUpdateManyWithoutSellerNestedInput
-  ordersAsBuyer?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
-  ordersAsSeller?: Prisma.OrderUncheckedUpdateManyWithoutSellerNestedInput
-  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutUserNestedInput
   conversationsCreated?: Prisma.ConversationUncheckedUpdateManyWithoutCreatedByNestedInput
   conversationParticipants?: Prisma.ConversationParticipantUncheckedUpdateManyWithoutUserNestedInput
+  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutUserNestedInput
+  listings?: Prisma.ListingUncheckedUpdateManyWithoutSellerNestedInput
   messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  reviewsGiven?: Prisma.ReviewUncheckedUpdateManyWithoutReviewerNestedInput
+  ordersAsBuyer?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
+  ordersAsSeller?: Prisma.OrderUncheckedUpdateManyWithoutSellerNestedInput
   reviewsReceived?: Prisma.ReviewUncheckedUpdateManyWithoutRevieweeNestedInput
+  reviewsGiven?: Prisma.ReviewUncheckedUpdateManyWithoutReviewerNestedInput
 }
 
 export type UserCreateWithoutOrdersAsBuyerInput = {
@@ -1183,15 +1183,15 @@ export type UserCreateWithoutOrdersAsBuyerInput = {
   isVerified?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  listings?: Prisma.ListingCreateNestedManyWithoutSellerInput
   bids?: Prisma.BidCreateNestedManyWithoutBidderInput
-  ordersAsSeller?: Prisma.OrderCreateNestedManyWithoutSellerInput
-  favourites?: Prisma.FavouriteCreateNestedManyWithoutUserInput
   conversationsCreated?: Prisma.ConversationCreateNestedManyWithoutCreatedByInput
   conversationParticipants?: Prisma.ConversationParticipantCreateNestedManyWithoutUserInput
+  favourites?: Prisma.FavouriteCreateNestedManyWithoutUserInput
+  listings?: Prisma.ListingCreateNestedManyWithoutSellerInput
   messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  reviewsGiven?: Prisma.ReviewCreateNestedManyWithoutReviewerInput
+  ordersAsSeller?: Prisma.OrderCreateNestedManyWithoutSellerInput
   reviewsReceived?: Prisma.ReviewCreateNestedManyWithoutRevieweeInput
+  reviewsGiven?: Prisma.ReviewCreateNestedManyWithoutReviewerInput
 }
 
 export type UserUncheckedCreateWithoutOrdersAsBuyerInput = {
@@ -1213,15 +1213,15 @@ export type UserUncheckedCreateWithoutOrdersAsBuyerInput = {
   isVerified?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  listings?: Prisma.ListingUncheckedCreateNestedManyWithoutSellerInput
   bids?: Prisma.BidUncheckedCreateNestedManyWithoutBidderInput
-  ordersAsSeller?: Prisma.OrderUncheckedCreateNestedManyWithoutSellerInput
-  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutUserInput
   conversationsCreated?: Prisma.ConversationUncheckedCreateNestedManyWithoutCreatedByInput
   conversationParticipants?: Prisma.ConversationParticipantUncheckedCreateNestedManyWithoutUserInput
+  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutUserInput
+  listings?: Prisma.ListingUncheckedCreateNestedManyWithoutSellerInput
   messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  reviewsGiven?: Prisma.ReviewUncheckedCreateNestedManyWithoutReviewerInput
+  ordersAsSeller?: Prisma.OrderUncheckedCreateNestedManyWithoutSellerInput
   reviewsReceived?: Prisma.ReviewUncheckedCreateNestedManyWithoutRevieweeInput
+  reviewsGiven?: Prisma.ReviewUncheckedCreateNestedManyWithoutReviewerInput
 }
 
 export type UserCreateOrConnectWithoutOrdersAsBuyerInput = {
@@ -1248,15 +1248,15 @@ export type UserCreateWithoutOrdersAsSellerInput = {
   isVerified?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  listings?: Prisma.ListingCreateNestedManyWithoutSellerInput
   bids?: Prisma.BidCreateNestedManyWithoutBidderInput
-  ordersAsBuyer?: Prisma.OrderCreateNestedManyWithoutBuyerInput
-  favourites?: Prisma.FavouriteCreateNestedManyWithoutUserInput
   conversationsCreated?: Prisma.ConversationCreateNestedManyWithoutCreatedByInput
   conversationParticipants?: Prisma.ConversationParticipantCreateNestedManyWithoutUserInput
+  favourites?: Prisma.FavouriteCreateNestedManyWithoutUserInput
+  listings?: Prisma.ListingCreateNestedManyWithoutSellerInput
   messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  reviewsGiven?: Prisma.ReviewCreateNestedManyWithoutReviewerInput
+  ordersAsBuyer?: Prisma.OrderCreateNestedManyWithoutBuyerInput
   reviewsReceived?: Prisma.ReviewCreateNestedManyWithoutRevieweeInput
+  reviewsGiven?: Prisma.ReviewCreateNestedManyWithoutReviewerInput
 }
 
 export type UserUncheckedCreateWithoutOrdersAsSellerInput = {
@@ -1278,15 +1278,15 @@ export type UserUncheckedCreateWithoutOrdersAsSellerInput = {
   isVerified?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  listings?: Prisma.ListingUncheckedCreateNestedManyWithoutSellerInput
   bids?: Prisma.BidUncheckedCreateNestedManyWithoutBidderInput
-  ordersAsBuyer?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
-  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutUserInput
   conversationsCreated?: Prisma.ConversationUncheckedCreateNestedManyWithoutCreatedByInput
   conversationParticipants?: Prisma.ConversationParticipantUncheckedCreateNestedManyWithoutUserInput
+  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutUserInput
+  listings?: Prisma.ListingUncheckedCreateNestedManyWithoutSellerInput
   messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  reviewsGiven?: Prisma.ReviewUncheckedCreateNestedManyWithoutReviewerInput
+  ordersAsBuyer?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
   reviewsReceived?: Prisma.ReviewUncheckedCreateNestedManyWithoutRevieweeInput
+  reviewsGiven?: Prisma.ReviewUncheckedCreateNestedManyWithoutReviewerInput
 }
 
 export type UserCreateOrConnectWithoutOrdersAsSellerInput = {
@@ -1324,15 +1324,15 @@ export type UserUpdateWithoutOrdersAsBuyerInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  listings?: Prisma.ListingUpdateManyWithoutSellerNestedInput
   bids?: Prisma.BidUpdateManyWithoutBidderNestedInput
-  ordersAsSeller?: Prisma.OrderUpdateManyWithoutSellerNestedInput
-  favourites?: Prisma.FavouriteUpdateManyWithoutUserNestedInput
   conversationsCreated?: Prisma.ConversationUpdateManyWithoutCreatedByNestedInput
   conversationParticipants?: Prisma.ConversationParticipantUpdateManyWithoutUserNestedInput
+  favourites?: Prisma.FavouriteUpdateManyWithoutUserNestedInput
+  listings?: Prisma.ListingUpdateManyWithoutSellerNestedInput
   messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  reviewsGiven?: Prisma.ReviewUpdateManyWithoutReviewerNestedInput
+  ordersAsSeller?: Prisma.OrderUpdateManyWithoutSellerNestedInput
   reviewsReceived?: Prisma.ReviewUpdateManyWithoutRevieweeNestedInput
+  reviewsGiven?: Prisma.ReviewUpdateManyWithoutReviewerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutOrdersAsBuyerInput = {
@@ -1354,15 +1354,15 @@ export type UserUncheckedUpdateWithoutOrdersAsBuyerInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  listings?: Prisma.ListingUncheckedUpdateManyWithoutSellerNestedInput
   bids?: Prisma.BidUncheckedUpdateManyWithoutBidderNestedInput
-  ordersAsSeller?: Prisma.OrderUncheckedUpdateManyWithoutSellerNestedInput
-  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutUserNestedInput
   conversationsCreated?: Prisma.ConversationUncheckedUpdateManyWithoutCreatedByNestedInput
   conversationParticipants?: Prisma.ConversationParticipantUncheckedUpdateManyWithoutUserNestedInput
+  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutUserNestedInput
+  listings?: Prisma.ListingUncheckedUpdateManyWithoutSellerNestedInput
   messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  reviewsGiven?: Prisma.ReviewUncheckedUpdateManyWithoutReviewerNestedInput
+  ordersAsSeller?: Prisma.OrderUncheckedUpdateManyWithoutSellerNestedInput
   reviewsReceived?: Prisma.ReviewUncheckedUpdateManyWithoutRevieweeNestedInput
+  reviewsGiven?: Prisma.ReviewUncheckedUpdateManyWithoutReviewerNestedInput
 }
 
 export type UserUpsertWithoutOrdersAsSellerInput = {
@@ -1395,15 +1395,15 @@ export type UserUpdateWithoutOrdersAsSellerInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  listings?: Prisma.ListingUpdateManyWithoutSellerNestedInput
   bids?: Prisma.BidUpdateManyWithoutBidderNestedInput
-  ordersAsBuyer?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
-  favourites?: Prisma.FavouriteUpdateManyWithoutUserNestedInput
   conversationsCreated?: Prisma.ConversationUpdateManyWithoutCreatedByNestedInput
   conversationParticipants?: Prisma.ConversationParticipantUpdateManyWithoutUserNestedInput
+  favourites?: Prisma.FavouriteUpdateManyWithoutUserNestedInput
+  listings?: Prisma.ListingUpdateManyWithoutSellerNestedInput
   messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  reviewsGiven?: Prisma.ReviewUpdateManyWithoutReviewerNestedInput
+  ordersAsBuyer?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
   reviewsReceived?: Prisma.ReviewUpdateManyWithoutRevieweeNestedInput
+  reviewsGiven?: Prisma.ReviewUpdateManyWithoutReviewerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutOrdersAsSellerInput = {
@@ -1425,15 +1425,15 @@ export type UserUncheckedUpdateWithoutOrdersAsSellerInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  listings?: Prisma.ListingUncheckedUpdateManyWithoutSellerNestedInput
   bids?: Prisma.BidUncheckedUpdateManyWithoutBidderNestedInput
-  ordersAsBuyer?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
-  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutUserNestedInput
   conversationsCreated?: Prisma.ConversationUncheckedUpdateManyWithoutCreatedByNestedInput
   conversationParticipants?: Prisma.ConversationParticipantUncheckedUpdateManyWithoutUserNestedInput
+  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutUserNestedInput
+  listings?: Prisma.ListingUncheckedUpdateManyWithoutSellerNestedInput
   messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  reviewsGiven?: Prisma.ReviewUncheckedUpdateManyWithoutReviewerNestedInput
+  ordersAsBuyer?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
   reviewsReceived?: Prisma.ReviewUncheckedUpdateManyWithoutRevieweeNestedInput
+  reviewsGiven?: Prisma.ReviewUncheckedUpdateManyWithoutReviewerNestedInput
 }
 
 export type UserCreateWithoutFavouritesInput = {
@@ -1455,15 +1455,15 @@ export type UserCreateWithoutFavouritesInput = {
   isVerified?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  listings?: Prisma.ListingCreateNestedManyWithoutSellerInput
   bids?: Prisma.BidCreateNestedManyWithoutBidderInput
-  ordersAsBuyer?: Prisma.OrderCreateNestedManyWithoutBuyerInput
-  ordersAsSeller?: Prisma.OrderCreateNestedManyWithoutSellerInput
   conversationsCreated?: Prisma.ConversationCreateNestedManyWithoutCreatedByInput
   conversationParticipants?: Prisma.ConversationParticipantCreateNestedManyWithoutUserInput
+  listings?: Prisma.ListingCreateNestedManyWithoutSellerInput
   messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  reviewsGiven?: Prisma.ReviewCreateNestedManyWithoutReviewerInput
+  ordersAsBuyer?: Prisma.OrderCreateNestedManyWithoutBuyerInput
+  ordersAsSeller?: Prisma.OrderCreateNestedManyWithoutSellerInput
   reviewsReceived?: Prisma.ReviewCreateNestedManyWithoutRevieweeInput
+  reviewsGiven?: Prisma.ReviewCreateNestedManyWithoutReviewerInput
 }
 
 export type UserUncheckedCreateWithoutFavouritesInput = {
@@ -1485,15 +1485,15 @@ export type UserUncheckedCreateWithoutFavouritesInput = {
   isVerified?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  listings?: Prisma.ListingUncheckedCreateNestedManyWithoutSellerInput
   bids?: Prisma.BidUncheckedCreateNestedManyWithoutBidderInput
-  ordersAsBuyer?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
-  ordersAsSeller?: Prisma.OrderUncheckedCreateNestedManyWithoutSellerInput
   conversationsCreated?: Prisma.ConversationUncheckedCreateNestedManyWithoutCreatedByInput
   conversationParticipants?: Prisma.ConversationParticipantUncheckedCreateNestedManyWithoutUserInput
+  listings?: Prisma.ListingUncheckedCreateNestedManyWithoutSellerInput
   messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  reviewsGiven?: Prisma.ReviewUncheckedCreateNestedManyWithoutReviewerInput
+  ordersAsBuyer?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
+  ordersAsSeller?: Prisma.OrderUncheckedCreateNestedManyWithoutSellerInput
   reviewsReceived?: Prisma.ReviewUncheckedCreateNestedManyWithoutRevieweeInput
+  reviewsGiven?: Prisma.ReviewUncheckedCreateNestedManyWithoutReviewerInput
 }
 
 export type UserCreateOrConnectWithoutFavouritesInput = {
@@ -1531,15 +1531,15 @@ export type UserUpdateWithoutFavouritesInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  listings?: Prisma.ListingUpdateManyWithoutSellerNestedInput
   bids?: Prisma.BidUpdateManyWithoutBidderNestedInput
-  ordersAsBuyer?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
-  ordersAsSeller?: Prisma.OrderUpdateManyWithoutSellerNestedInput
   conversationsCreated?: Prisma.ConversationUpdateManyWithoutCreatedByNestedInput
   conversationParticipants?: Prisma.ConversationParticipantUpdateManyWithoutUserNestedInput
+  listings?: Prisma.ListingUpdateManyWithoutSellerNestedInput
   messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  reviewsGiven?: Prisma.ReviewUpdateManyWithoutReviewerNestedInput
+  ordersAsBuyer?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
+  ordersAsSeller?: Prisma.OrderUpdateManyWithoutSellerNestedInput
   reviewsReceived?: Prisma.ReviewUpdateManyWithoutRevieweeNestedInput
+  reviewsGiven?: Prisma.ReviewUpdateManyWithoutReviewerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutFavouritesInput = {
@@ -1561,15 +1561,15 @@ export type UserUncheckedUpdateWithoutFavouritesInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  listings?: Prisma.ListingUncheckedUpdateManyWithoutSellerNestedInput
   bids?: Prisma.BidUncheckedUpdateManyWithoutBidderNestedInput
-  ordersAsBuyer?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
-  ordersAsSeller?: Prisma.OrderUncheckedUpdateManyWithoutSellerNestedInput
   conversationsCreated?: Prisma.ConversationUncheckedUpdateManyWithoutCreatedByNestedInput
   conversationParticipants?: Prisma.ConversationParticipantUncheckedUpdateManyWithoutUserNestedInput
+  listings?: Prisma.ListingUncheckedUpdateManyWithoutSellerNestedInput
   messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  reviewsGiven?: Prisma.ReviewUncheckedUpdateManyWithoutReviewerNestedInput
+  ordersAsBuyer?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
+  ordersAsSeller?: Prisma.OrderUncheckedUpdateManyWithoutSellerNestedInput
   reviewsReceived?: Prisma.ReviewUncheckedUpdateManyWithoutRevieweeNestedInput
+  reviewsGiven?: Prisma.ReviewUncheckedUpdateManyWithoutReviewerNestedInput
 }
 
 export type UserCreateWithoutConversationsCreatedInput = {
@@ -1591,15 +1591,15 @@ export type UserCreateWithoutConversationsCreatedInput = {
   isVerified?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  listings?: Prisma.ListingCreateNestedManyWithoutSellerInput
   bids?: Prisma.BidCreateNestedManyWithoutBidderInput
+  conversationParticipants?: Prisma.ConversationParticipantCreateNestedManyWithoutUserInput
+  favourites?: Prisma.FavouriteCreateNestedManyWithoutUserInput
+  listings?: Prisma.ListingCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
   ordersAsBuyer?: Prisma.OrderCreateNestedManyWithoutBuyerInput
   ordersAsSeller?: Prisma.OrderCreateNestedManyWithoutSellerInput
-  favourites?: Prisma.FavouriteCreateNestedManyWithoutUserInput
-  conversationParticipants?: Prisma.ConversationParticipantCreateNestedManyWithoutUserInput
-  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  reviewsGiven?: Prisma.ReviewCreateNestedManyWithoutReviewerInput
   reviewsReceived?: Prisma.ReviewCreateNestedManyWithoutRevieweeInput
+  reviewsGiven?: Prisma.ReviewCreateNestedManyWithoutReviewerInput
 }
 
 export type UserUncheckedCreateWithoutConversationsCreatedInput = {
@@ -1621,15 +1621,15 @@ export type UserUncheckedCreateWithoutConversationsCreatedInput = {
   isVerified?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  listings?: Prisma.ListingUncheckedCreateNestedManyWithoutSellerInput
   bids?: Prisma.BidUncheckedCreateNestedManyWithoutBidderInput
+  conversationParticipants?: Prisma.ConversationParticipantUncheckedCreateNestedManyWithoutUserInput
+  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutUserInput
+  listings?: Prisma.ListingUncheckedCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
   ordersAsBuyer?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
   ordersAsSeller?: Prisma.OrderUncheckedCreateNestedManyWithoutSellerInput
-  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutUserInput
-  conversationParticipants?: Prisma.ConversationParticipantUncheckedCreateNestedManyWithoutUserInput
-  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  reviewsGiven?: Prisma.ReviewUncheckedCreateNestedManyWithoutReviewerInput
   reviewsReceived?: Prisma.ReviewUncheckedCreateNestedManyWithoutRevieweeInput
+  reviewsGiven?: Prisma.ReviewUncheckedCreateNestedManyWithoutReviewerInput
 }
 
 export type UserCreateOrConnectWithoutConversationsCreatedInput = {
@@ -1667,15 +1667,15 @@ export type UserUpdateWithoutConversationsCreatedInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  listings?: Prisma.ListingUpdateManyWithoutSellerNestedInput
   bids?: Prisma.BidUpdateManyWithoutBidderNestedInput
+  conversationParticipants?: Prisma.ConversationParticipantUpdateManyWithoutUserNestedInput
+  favourites?: Prisma.FavouriteUpdateManyWithoutUserNestedInput
+  listings?: Prisma.ListingUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
   ordersAsBuyer?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
   ordersAsSeller?: Prisma.OrderUpdateManyWithoutSellerNestedInput
-  favourites?: Prisma.FavouriteUpdateManyWithoutUserNestedInput
-  conversationParticipants?: Prisma.ConversationParticipantUpdateManyWithoutUserNestedInput
-  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  reviewsGiven?: Prisma.ReviewUpdateManyWithoutReviewerNestedInput
   reviewsReceived?: Prisma.ReviewUpdateManyWithoutRevieweeNestedInput
+  reviewsGiven?: Prisma.ReviewUpdateManyWithoutReviewerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutConversationsCreatedInput = {
@@ -1697,15 +1697,15 @@ export type UserUncheckedUpdateWithoutConversationsCreatedInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  listings?: Prisma.ListingUncheckedUpdateManyWithoutSellerNestedInput
   bids?: Prisma.BidUncheckedUpdateManyWithoutBidderNestedInput
+  conversationParticipants?: Prisma.ConversationParticipantUncheckedUpdateManyWithoutUserNestedInput
+  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutUserNestedInput
+  listings?: Prisma.ListingUncheckedUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
   ordersAsBuyer?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
   ordersAsSeller?: Prisma.OrderUncheckedUpdateManyWithoutSellerNestedInput
-  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutUserNestedInput
-  conversationParticipants?: Prisma.ConversationParticipantUncheckedUpdateManyWithoutUserNestedInput
-  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  reviewsGiven?: Prisma.ReviewUncheckedUpdateManyWithoutReviewerNestedInput
   reviewsReceived?: Prisma.ReviewUncheckedUpdateManyWithoutRevieweeNestedInput
+  reviewsGiven?: Prisma.ReviewUncheckedUpdateManyWithoutReviewerNestedInput
 }
 
 export type UserCreateWithoutConversationParticipantsInput = {
@@ -1727,15 +1727,15 @@ export type UserCreateWithoutConversationParticipantsInput = {
   isVerified?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  listings?: Prisma.ListingCreateNestedManyWithoutSellerInput
   bids?: Prisma.BidCreateNestedManyWithoutBidderInput
+  conversationsCreated?: Prisma.ConversationCreateNestedManyWithoutCreatedByInput
+  favourites?: Prisma.FavouriteCreateNestedManyWithoutUserInput
+  listings?: Prisma.ListingCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
   ordersAsBuyer?: Prisma.OrderCreateNestedManyWithoutBuyerInput
   ordersAsSeller?: Prisma.OrderCreateNestedManyWithoutSellerInput
-  favourites?: Prisma.FavouriteCreateNestedManyWithoutUserInput
-  conversationsCreated?: Prisma.ConversationCreateNestedManyWithoutCreatedByInput
-  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  reviewsGiven?: Prisma.ReviewCreateNestedManyWithoutReviewerInput
   reviewsReceived?: Prisma.ReviewCreateNestedManyWithoutRevieweeInput
+  reviewsGiven?: Prisma.ReviewCreateNestedManyWithoutReviewerInput
 }
 
 export type UserUncheckedCreateWithoutConversationParticipantsInput = {
@@ -1757,15 +1757,15 @@ export type UserUncheckedCreateWithoutConversationParticipantsInput = {
   isVerified?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  listings?: Prisma.ListingUncheckedCreateNestedManyWithoutSellerInput
   bids?: Prisma.BidUncheckedCreateNestedManyWithoutBidderInput
+  conversationsCreated?: Prisma.ConversationUncheckedCreateNestedManyWithoutCreatedByInput
+  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutUserInput
+  listings?: Prisma.ListingUncheckedCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
   ordersAsBuyer?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
   ordersAsSeller?: Prisma.OrderUncheckedCreateNestedManyWithoutSellerInput
-  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutUserInput
-  conversationsCreated?: Prisma.ConversationUncheckedCreateNestedManyWithoutCreatedByInput
-  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  reviewsGiven?: Prisma.ReviewUncheckedCreateNestedManyWithoutReviewerInput
   reviewsReceived?: Prisma.ReviewUncheckedCreateNestedManyWithoutRevieweeInput
+  reviewsGiven?: Prisma.ReviewUncheckedCreateNestedManyWithoutReviewerInput
 }
 
 export type UserCreateOrConnectWithoutConversationParticipantsInput = {
@@ -1803,15 +1803,15 @@ export type UserUpdateWithoutConversationParticipantsInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  listings?: Prisma.ListingUpdateManyWithoutSellerNestedInput
   bids?: Prisma.BidUpdateManyWithoutBidderNestedInput
+  conversationsCreated?: Prisma.ConversationUpdateManyWithoutCreatedByNestedInput
+  favourites?: Prisma.FavouriteUpdateManyWithoutUserNestedInput
+  listings?: Prisma.ListingUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
   ordersAsBuyer?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
   ordersAsSeller?: Prisma.OrderUpdateManyWithoutSellerNestedInput
-  favourites?: Prisma.FavouriteUpdateManyWithoutUserNestedInput
-  conversationsCreated?: Prisma.ConversationUpdateManyWithoutCreatedByNestedInput
-  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  reviewsGiven?: Prisma.ReviewUpdateManyWithoutReviewerNestedInput
   reviewsReceived?: Prisma.ReviewUpdateManyWithoutRevieweeNestedInput
+  reviewsGiven?: Prisma.ReviewUpdateManyWithoutReviewerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutConversationParticipantsInput = {
@@ -1833,15 +1833,15 @@ export type UserUncheckedUpdateWithoutConversationParticipantsInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  listings?: Prisma.ListingUncheckedUpdateManyWithoutSellerNestedInput
   bids?: Prisma.BidUncheckedUpdateManyWithoutBidderNestedInput
+  conversationsCreated?: Prisma.ConversationUncheckedUpdateManyWithoutCreatedByNestedInput
+  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutUserNestedInput
+  listings?: Prisma.ListingUncheckedUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
   ordersAsBuyer?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
   ordersAsSeller?: Prisma.OrderUncheckedUpdateManyWithoutSellerNestedInput
-  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutUserNestedInput
-  conversationsCreated?: Prisma.ConversationUncheckedUpdateManyWithoutCreatedByNestedInput
-  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  reviewsGiven?: Prisma.ReviewUncheckedUpdateManyWithoutReviewerNestedInput
   reviewsReceived?: Prisma.ReviewUncheckedUpdateManyWithoutRevieweeNestedInput
+  reviewsGiven?: Prisma.ReviewUncheckedUpdateManyWithoutReviewerNestedInput
 }
 
 export type UserCreateWithoutMessagesInput = {
@@ -1863,15 +1863,15 @@ export type UserCreateWithoutMessagesInput = {
   isVerified?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  listings?: Prisma.ListingCreateNestedManyWithoutSellerInput
   bids?: Prisma.BidCreateNestedManyWithoutBidderInput
-  ordersAsBuyer?: Prisma.OrderCreateNestedManyWithoutBuyerInput
-  ordersAsSeller?: Prisma.OrderCreateNestedManyWithoutSellerInput
-  favourites?: Prisma.FavouriteCreateNestedManyWithoutUserInput
   conversationsCreated?: Prisma.ConversationCreateNestedManyWithoutCreatedByInput
   conversationParticipants?: Prisma.ConversationParticipantCreateNestedManyWithoutUserInput
-  reviewsGiven?: Prisma.ReviewCreateNestedManyWithoutReviewerInput
+  favourites?: Prisma.FavouriteCreateNestedManyWithoutUserInput
+  listings?: Prisma.ListingCreateNestedManyWithoutSellerInput
+  ordersAsBuyer?: Prisma.OrderCreateNestedManyWithoutBuyerInput
+  ordersAsSeller?: Prisma.OrderCreateNestedManyWithoutSellerInput
   reviewsReceived?: Prisma.ReviewCreateNestedManyWithoutRevieweeInput
+  reviewsGiven?: Prisma.ReviewCreateNestedManyWithoutReviewerInput
 }
 
 export type UserUncheckedCreateWithoutMessagesInput = {
@@ -1893,15 +1893,15 @@ export type UserUncheckedCreateWithoutMessagesInput = {
   isVerified?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  listings?: Prisma.ListingUncheckedCreateNestedManyWithoutSellerInput
   bids?: Prisma.BidUncheckedCreateNestedManyWithoutBidderInput
-  ordersAsBuyer?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
-  ordersAsSeller?: Prisma.OrderUncheckedCreateNestedManyWithoutSellerInput
-  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutUserInput
   conversationsCreated?: Prisma.ConversationUncheckedCreateNestedManyWithoutCreatedByInput
   conversationParticipants?: Prisma.ConversationParticipantUncheckedCreateNestedManyWithoutUserInput
-  reviewsGiven?: Prisma.ReviewUncheckedCreateNestedManyWithoutReviewerInput
+  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutUserInput
+  listings?: Prisma.ListingUncheckedCreateNestedManyWithoutSellerInput
+  ordersAsBuyer?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
+  ordersAsSeller?: Prisma.OrderUncheckedCreateNestedManyWithoutSellerInput
   reviewsReceived?: Prisma.ReviewUncheckedCreateNestedManyWithoutRevieweeInput
+  reviewsGiven?: Prisma.ReviewUncheckedCreateNestedManyWithoutReviewerInput
 }
 
 export type UserCreateOrConnectWithoutMessagesInput = {
@@ -1939,15 +1939,15 @@ export type UserUpdateWithoutMessagesInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  listings?: Prisma.ListingUpdateManyWithoutSellerNestedInput
   bids?: Prisma.BidUpdateManyWithoutBidderNestedInput
-  ordersAsBuyer?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
-  ordersAsSeller?: Prisma.OrderUpdateManyWithoutSellerNestedInput
-  favourites?: Prisma.FavouriteUpdateManyWithoutUserNestedInput
   conversationsCreated?: Prisma.ConversationUpdateManyWithoutCreatedByNestedInput
   conversationParticipants?: Prisma.ConversationParticipantUpdateManyWithoutUserNestedInput
-  reviewsGiven?: Prisma.ReviewUpdateManyWithoutReviewerNestedInput
+  favourites?: Prisma.FavouriteUpdateManyWithoutUserNestedInput
+  listings?: Prisma.ListingUpdateManyWithoutSellerNestedInput
+  ordersAsBuyer?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
+  ordersAsSeller?: Prisma.OrderUpdateManyWithoutSellerNestedInput
   reviewsReceived?: Prisma.ReviewUpdateManyWithoutRevieweeNestedInput
+  reviewsGiven?: Prisma.ReviewUpdateManyWithoutReviewerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutMessagesInput = {
@@ -1969,80 +1969,15 @@ export type UserUncheckedUpdateWithoutMessagesInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  listings?: Prisma.ListingUncheckedUpdateManyWithoutSellerNestedInput
   bids?: Prisma.BidUncheckedUpdateManyWithoutBidderNestedInput
-  ordersAsBuyer?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
-  ordersAsSeller?: Prisma.OrderUncheckedUpdateManyWithoutSellerNestedInput
-  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutUserNestedInput
   conversationsCreated?: Prisma.ConversationUncheckedUpdateManyWithoutCreatedByNestedInput
   conversationParticipants?: Prisma.ConversationParticipantUncheckedUpdateManyWithoutUserNestedInput
-  reviewsGiven?: Prisma.ReviewUncheckedUpdateManyWithoutReviewerNestedInput
+  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutUserNestedInput
+  listings?: Prisma.ListingUncheckedUpdateManyWithoutSellerNestedInput
+  ordersAsBuyer?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
+  ordersAsSeller?: Prisma.OrderUncheckedUpdateManyWithoutSellerNestedInput
   reviewsReceived?: Prisma.ReviewUncheckedUpdateManyWithoutRevieweeNestedInput
-}
-
-export type UserCreateWithoutReviewsGivenInput = {
-  id?: string
-  name: string
-  email: string
-  phone: string
-  passwordHash: string
-  avatarUrl?: string | null
-  role?: $Enums.UserRole
-  addressLine1?: string | null
-  addressLine2?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
-  ratingAverage?: runtime.Decimal | runtime.DecimalJsLike | number | string
-  ratingCount?: number
-  isVerified?: boolean
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  listings?: Prisma.ListingCreateNestedManyWithoutSellerInput
-  bids?: Prisma.BidCreateNestedManyWithoutBidderInput
-  ordersAsBuyer?: Prisma.OrderCreateNestedManyWithoutBuyerInput
-  ordersAsSeller?: Prisma.OrderCreateNestedManyWithoutSellerInput
-  favourites?: Prisma.FavouriteCreateNestedManyWithoutUserInput
-  conversationsCreated?: Prisma.ConversationCreateNestedManyWithoutCreatedByInput
-  conversationParticipants?: Prisma.ConversationParticipantCreateNestedManyWithoutUserInput
-  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  reviewsReceived?: Prisma.ReviewCreateNestedManyWithoutRevieweeInput
-}
-
-export type UserUncheckedCreateWithoutReviewsGivenInput = {
-  id?: string
-  name: string
-  email: string
-  phone: string
-  passwordHash: string
-  avatarUrl?: string | null
-  role?: $Enums.UserRole
-  addressLine1?: string | null
-  addressLine2?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
-  ratingAverage?: runtime.Decimal | runtime.DecimalJsLike | number | string
-  ratingCount?: number
-  isVerified?: boolean
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  listings?: Prisma.ListingUncheckedCreateNestedManyWithoutSellerInput
-  bids?: Prisma.BidUncheckedCreateNestedManyWithoutBidderInput
-  ordersAsBuyer?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
-  ordersAsSeller?: Prisma.OrderUncheckedCreateNestedManyWithoutSellerInput
-  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutUserInput
-  conversationsCreated?: Prisma.ConversationUncheckedCreateNestedManyWithoutCreatedByInput
-  conversationParticipants?: Prisma.ConversationParticipantUncheckedCreateNestedManyWithoutUserInput
-  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  reviewsReceived?: Prisma.ReviewUncheckedCreateNestedManyWithoutRevieweeInput
-}
-
-export type UserCreateOrConnectWithoutReviewsGivenInput = {
-  where: Prisma.UserWhereUniqueInput
-  create: Prisma.XOR<Prisma.UserCreateWithoutReviewsGivenInput, Prisma.UserUncheckedCreateWithoutReviewsGivenInput>
+  reviewsGiven?: Prisma.ReviewUncheckedUpdateManyWithoutReviewerNestedInput
 }
 
 export type UserCreateWithoutReviewsReceivedInput = {
@@ -2064,14 +1999,14 @@ export type UserCreateWithoutReviewsReceivedInput = {
   isVerified?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  listings?: Prisma.ListingCreateNestedManyWithoutSellerInput
   bids?: Prisma.BidCreateNestedManyWithoutBidderInput
-  ordersAsBuyer?: Prisma.OrderCreateNestedManyWithoutBuyerInput
-  ordersAsSeller?: Prisma.OrderCreateNestedManyWithoutSellerInput
-  favourites?: Prisma.FavouriteCreateNestedManyWithoutUserInput
   conversationsCreated?: Prisma.ConversationCreateNestedManyWithoutCreatedByInput
   conversationParticipants?: Prisma.ConversationParticipantCreateNestedManyWithoutUserInput
+  favourites?: Prisma.FavouriteCreateNestedManyWithoutUserInput
+  listings?: Prisma.ListingCreateNestedManyWithoutSellerInput
   messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
+  ordersAsBuyer?: Prisma.OrderCreateNestedManyWithoutBuyerInput
+  ordersAsSeller?: Prisma.OrderCreateNestedManyWithoutSellerInput
   reviewsGiven?: Prisma.ReviewCreateNestedManyWithoutReviewerInput
 }
 
@@ -2094,14 +2029,14 @@ export type UserUncheckedCreateWithoutReviewsReceivedInput = {
   isVerified?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  listings?: Prisma.ListingUncheckedCreateNestedManyWithoutSellerInput
   bids?: Prisma.BidUncheckedCreateNestedManyWithoutBidderInput
-  ordersAsBuyer?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
-  ordersAsSeller?: Prisma.OrderUncheckedCreateNestedManyWithoutSellerInput
-  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutUserInput
   conversationsCreated?: Prisma.ConversationUncheckedCreateNestedManyWithoutCreatedByInput
   conversationParticipants?: Prisma.ConversationParticipantUncheckedCreateNestedManyWithoutUserInput
+  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutUserInput
+  listings?: Prisma.ListingUncheckedCreateNestedManyWithoutSellerInput
   messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
+  ordersAsBuyer?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
+  ordersAsSeller?: Prisma.OrderUncheckedCreateNestedManyWithoutSellerInput
   reviewsGiven?: Prisma.ReviewUncheckedCreateNestedManyWithoutReviewerInput
 }
 
@@ -2110,75 +2045,69 @@ export type UserCreateOrConnectWithoutReviewsReceivedInput = {
   create: Prisma.XOR<Prisma.UserCreateWithoutReviewsReceivedInput, Prisma.UserUncheckedCreateWithoutReviewsReceivedInput>
 }
 
-export type UserUpsertWithoutReviewsGivenInput = {
-  update: Prisma.XOR<Prisma.UserUpdateWithoutReviewsGivenInput, Prisma.UserUncheckedUpdateWithoutReviewsGivenInput>
+export type UserCreateWithoutReviewsGivenInput = {
+  id?: string
+  name: string
+  email: string
+  phone: string
+  passwordHash: string
+  avatarUrl?: string | null
+  role?: $Enums.UserRole
+  addressLine1?: string | null
+  addressLine2?: string | null
+  city?: string | null
+  state?: string | null
+  country?: string | null
+  pincode?: string | null
+  ratingAverage?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  ratingCount?: number
+  isVerified?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  bids?: Prisma.BidCreateNestedManyWithoutBidderInput
+  conversationsCreated?: Prisma.ConversationCreateNestedManyWithoutCreatedByInput
+  conversationParticipants?: Prisma.ConversationParticipantCreateNestedManyWithoutUserInput
+  favourites?: Prisma.FavouriteCreateNestedManyWithoutUserInput
+  listings?: Prisma.ListingCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
+  ordersAsBuyer?: Prisma.OrderCreateNestedManyWithoutBuyerInput
+  ordersAsSeller?: Prisma.OrderCreateNestedManyWithoutSellerInput
+  reviewsReceived?: Prisma.ReviewCreateNestedManyWithoutRevieweeInput
+}
+
+export type UserUncheckedCreateWithoutReviewsGivenInput = {
+  id?: string
+  name: string
+  email: string
+  phone: string
+  passwordHash: string
+  avatarUrl?: string | null
+  role?: $Enums.UserRole
+  addressLine1?: string | null
+  addressLine2?: string | null
+  city?: string | null
+  state?: string | null
+  country?: string | null
+  pincode?: string | null
+  ratingAverage?: runtime.Decimal | runtime.DecimalJsLike | number | string
+  ratingCount?: number
+  isVerified?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  bids?: Prisma.BidUncheckedCreateNestedManyWithoutBidderInput
+  conversationsCreated?: Prisma.ConversationUncheckedCreateNestedManyWithoutCreatedByInput
+  conversationParticipants?: Prisma.ConversationParticipantUncheckedCreateNestedManyWithoutUserInput
+  favourites?: Prisma.FavouriteUncheckedCreateNestedManyWithoutUserInput
+  listings?: Prisma.ListingUncheckedCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
+  ordersAsBuyer?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
+  ordersAsSeller?: Prisma.OrderUncheckedCreateNestedManyWithoutSellerInput
+  reviewsReceived?: Prisma.ReviewUncheckedCreateNestedManyWithoutRevieweeInput
+}
+
+export type UserCreateOrConnectWithoutReviewsGivenInput = {
+  where: Prisma.UserWhereUniqueInput
   create: Prisma.XOR<Prisma.UserCreateWithoutReviewsGivenInput, Prisma.UserUncheckedCreateWithoutReviewsGivenInput>
-  where?: Prisma.UserWhereInput
-}
-
-export type UserUpdateToOneWithWhereWithoutReviewsGivenInput = {
-  where?: Prisma.UserWhereInput
-  data: Prisma.XOR<Prisma.UserUpdateWithoutReviewsGivenInput, Prisma.UserUncheckedUpdateWithoutReviewsGivenInput>
-}
-
-export type UserUpdateWithoutReviewsGivenInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  email?: Prisma.StringFieldUpdateOperationsInput | string
-  phone?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
-  avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  role?: Prisma.EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
-  addressLine1?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  addressLine2?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  ratingAverage?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  ratingCount?: Prisma.IntFieldUpdateOperationsInput | number
-  isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  listings?: Prisma.ListingUpdateManyWithoutSellerNestedInput
-  bids?: Prisma.BidUpdateManyWithoutBidderNestedInput
-  ordersAsBuyer?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
-  ordersAsSeller?: Prisma.OrderUpdateManyWithoutSellerNestedInput
-  favourites?: Prisma.FavouriteUpdateManyWithoutUserNestedInput
-  conversationsCreated?: Prisma.ConversationUpdateManyWithoutCreatedByNestedInput
-  conversationParticipants?: Prisma.ConversationParticipantUpdateManyWithoutUserNestedInput
-  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  reviewsReceived?: Prisma.ReviewUpdateManyWithoutRevieweeNestedInput
-}
-
-export type UserUncheckedUpdateWithoutReviewsGivenInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  email?: Prisma.StringFieldUpdateOperationsInput | string
-  phone?: Prisma.StringFieldUpdateOperationsInput | string
-  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
-  avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  role?: Prisma.EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
-  addressLine1?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  addressLine2?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  ratingAverage?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  ratingCount?: Prisma.IntFieldUpdateOperationsInput | number
-  isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  listings?: Prisma.ListingUncheckedUpdateManyWithoutSellerNestedInput
-  bids?: Prisma.BidUncheckedUpdateManyWithoutBidderNestedInput
-  ordersAsBuyer?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
-  ordersAsSeller?: Prisma.OrderUncheckedUpdateManyWithoutSellerNestedInput
-  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutUserNestedInput
-  conversationsCreated?: Prisma.ConversationUncheckedUpdateManyWithoutCreatedByNestedInput
-  conversationParticipants?: Prisma.ConversationParticipantUncheckedUpdateManyWithoutUserNestedInput
-  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  reviewsReceived?: Prisma.ReviewUncheckedUpdateManyWithoutRevieweeNestedInput
 }
 
 export type UserUpsertWithoutReviewsReceivedInput = {
@@ -2211,14 +2140,14 @@ export type UserUpdateWithoutReviewsReceivedInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  listings?: Prisma.ListingUpdateManyWithoutSellerNestedInput
   bids?: Prisma.BidUpdateManyWithoutBidderNestedInput
-  ordersAsBuyer?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
-  ordersAsSeller?: Prisma.OrderUpdateManyWithoutSellerNestedInput
-  favourites?: Prisma.FavouriteUpdateManyWithoutUserNestedInput
   conversationsCreated?: Prisma.ConversationUpdateManyWithoutCreatedByNestedInput
   conversationParticipants?: Prisma.ConversationParticipantUpdateManyWithoutUserNestedInput
+  favourites?: Prisma.FavouriteUpdateManyWithoutUserNestedInput
+  listings?: Prisma.ListingUpdateManyWithoutSellerNestedInput
   messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
+  ordersAsBuyer?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
+  ordersAsSeller?: Prisma.OrderUpdateManyWithoutSellerNestedInput
   reviewsGiven?: Prisma.ReviewUpdateManyWithoutReviewerNestedInput
 }
 
@@ -2241,15 +2170,86 @@ export type UserUncheckedUpdateWithoutReviewsReceivedInput = {
   isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  listings?: Prisma.ListingUncheckedUpdateManyWithoutSellerNestedInput
   bids?: Prisma.BidUncheckedUpdateManyWithoutBidderNestedInput
-  ordersAsBuyer?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
-  ordersAsSeller?: Prisma.OrderUncheckedUpdateManyWithoutSellerNestedInput
-  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutUserNestedInput
   conversationsCreated?: Prisma.ConversationUncheckedUpdateManyWithoutCreatedByNestedInput
   conversationParticipants?: Prisma.ConversationParticipantUncheckedUpdateManyWithoutUserNestedInput
+  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutUserNestedInput
+  listings?: Prisma.ListingUncheckedUpdateManyWithoutSellerNestedInput
   messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
+  ordersAsBuyer?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
+  ordersAsSeller?: Prisma.OrderUncheckedUpdateManyWithoutSellerNestedInput
   reviewsGiven?: Prisma.ReviewUncheckedUpdateManyWithoutReviewerNestedInput
+}
+
+export type UserUpsertWithoutReviewsGivenInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutReviewsGivenInput, Prisma.UserUncheckedUpdateWithoutReviewsGivenInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutReviewsGivenInput, Prisma.UserUncheckedCreateWithoutReviewsGivenInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutReviewsGivenInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutReviewsGivenInput, Prisma.UserUncheckedUpdateWithoutReviewsGivenInput>
+}
+
+export type UserUpdateWithoutReviewsGivenInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+  addressLine1?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  addressLine2?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ratingAverage?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  ratingCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  bids?: Prisma.BidUpdateManyWithoutBidderNestedInput
+  conversationsCreated?: Prisma.ConversationUpdateManyWithoutCreatedByNestedInput
+  conversationParticipants?: Prisma.ConversationParticipantUpdateManyWithoutUserNestedInput
+  favourites?: Prisma.FavouriteUpdateManyWithoutUserNestedInput
+  listings?: Prisma.ListingUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
+  ordersAsBuyer?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
+  ordersAsSeller?: Prisma.OrderUpdateManyWithoutSellerNestedInput
+  reviewsReceived?: Prisma.ReviewUpdateManyWithoutRevieweeNestedInput
+}
+
+export type UserUncheckedUpdateWithoutReviewsGivenInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  role?: Prisma.EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
+  addressLine1?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  addressLine2?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  ratingAverage?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
+  ratingCount?: Prisma.IntFieldUpdateOperationsInput | number
+  isVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  bids?: Prisma.BidUncheckedUpdateManyWithoutBidderNestedInput
+  conversationsCreated?: Prisma.ConversationUncheckedUpdateManyWithoutCreatedByNestedInput
+  conversationParticipants?: Prisma.ConversationParticipantUncheckedUpdateManyWithoutUserNestedInput
+  favourites?: Prisma.FavouriteUncheckedUpdateManyWithoutUserNestedInput
+  listings?: Prisma.ListingUncheckedUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
+  ordersAsBuyer?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
+  ordersAsSeller?: Prisma.OrderUncheckedUpdateManyWithoutSellerNestedInput
+  reviewsReceived?: Prisma.ReviewUncheckedUpdateManyWithoutRevieweeNestedInput
 }
 
 
@@ -2258,29 +2258,29 @@ export type UserUncheckedUpdateWithoutReviewsReceivedInput = {
  */
 
 export type UserCountOutputType = {
-  listings: number
   bids: number
-  ordersAsBuyer: number
-  ordersAsSeller: number
-  favourites: number
   conversationsCreated: number
   conversationParticipants: number
+  favourites: number
+  listings: number
   messages: number
-  reviewsGiven: number
+  ordersAsBuyer: number
+  ordersAsSeller: number
   reviewsReceived: number
+  reviewsGiven: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  listings?: boolean | UserCountOutputTypeCountListingsArgs
   bids?: boolean | UserCountOutputTypeCountBidsArgs
-  ordersAsBuyer?: boolean | UserCountOutputTypeCountOrdersAsBuyerArgs
-  ordersAsSeller?: boolean | UserCountOutputTypeCountOrdersAsSellerArgs
-  favourites?: boolean | UserCountOutputTypeCountFavouritesArgs
   conversationsCreated?: boolean | UserCountOutputTypeCountConversationsCreatedArgs
   conversationParticipants?: boolean | UserCountOutputTypeCountConversationParticipantsArgs
+  favourites?: boolean | UserCountOutputTypeCountFavouritesArgs
+  listings?: boolean | UserCountOutputTypeCountListingsArgs
   messages?: boolean | UserCountOutputTypeCountMessagesArgs
-  reviewsGiven?: boolean | UserCountOutputTypeCountReviewsGivenArgs
+  ordersAsBuyer?: boolean | UserCountOutputTypeCountOrdersAsBuyerArgs
+  ordersAsSeller?: boolean | UserCountOutputTypeCountOrdersAsSellerArgs
   reviewsReceived?: boolean | UserCountOutputTypeCountReviewsReceivedArgs
+  reviewsGiven?: boolean | UserCountOutputTypeCountReviewsGivenArgs
 }
 
 /**
@@ -2296,36 +2296,8 @@ export type UserCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensi
 /**
  * UserCountOutputType without action
  */
-export type UserCountOutputTypeCountListingsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ListingWhereInput
-}
-
-/**
- * UserCountOutputType without action
- */
 export type UserCountOutputTypeCountBidsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.BidWhereInput
-}
-
-/**
- * UserCountOutputType without action
- */
-export type UserCountOutputTypeCountOrdersAsBuyerArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.OrderWhereInput
-}
-
-/**
- * UserCountOutputType without action
- */
-export type UserCountOutputTypeCountOrdersAsSellerArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.OrderWhereInput
-}
-
-/**
- * UserCountOutputType without action
- */
-export type UserCountOutputTypeCountFavouritesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.FavouriteWhereInput
 }
 
 /**
@@ -2345,6 +2317,20 @@ export type UserCountOutputTypeCountConversationParticipantsArgs<ExtArgs extends
 /**
  * UserCountOutputType without action
  */
+export type UserCountOutputTypeCountFavouritesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.FavouriteWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountListingsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ListingWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
 export type UserCountOutputTypeCountMessagesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.MessageWhereInput
 }
@@ -2352,14 +2338,28 @@ export type UserCountOutputTypeCountMessagesArgs<ExtArgs extends runtime.Types.E
 /**
  * UserCountOutputType without action
  */
-export type UserCountOutputTypeCountReviewsGivenArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ReviewWhereInput
+export type UserCountOutputTypeCountOrdersAsBuyerArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.OrderWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountOrdersAsSellerArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.OrderWhereInput
 }
 
 /**
  * UserCountOutputType without action
  */
 export type UserCountOutputTypeCountReviewsReceivedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ReviewWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountReviewsGivenArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.ReviewWhereInput
 }
 
@@ -2383,16 +2383,16 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   isVerified?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  listings?: boolean | Prisma.User$listingsArgs<ExtArgs>
   bids?: boolean | Prisma.User$bidsArgs<ExtArgs>
-  ordersAsBuyer?: boolean | Prisma.User$ordersAsBuyerArgs<ExtArgs>
-  ordersAsSeller?: boolean | Prisma.User$ordersAsSellerArgs<ExtArgs>
-  favourites?: boolean | Prisma.User$favouritesArgs<ExtArgs>
   conversationsCreated?: boolean | Prisma.User$conversationsCreatedArgs<ExtArgs>
   conversationParticipants?: boolean | Prisma.User$conversationParticipantsArgs<ExtArgs>
+  favourites?: boolean | Prisma.User$favouritesArgs<ExtArgs>
+  listings?: boolean | Prisma.User$listingsArgs<ExtArgs>
   messages?: boolean | Prisma.User$messagesArgs<ExtArgs>
-  reviewsGiven?: boolean | Prisma.User$reviewsGivenArgs<ExtArgs>
+  ordersAsBuyer?: boolean | Prisma.User$ordersAsBuyerArgs<ExtArgs>
+  ordersAsSeller?: boolean | Prisma.User$ordersAsSellerArgs<ExtArgs>
   reviewsReceived?: boolean | Prisma.User$reviewsReceivedArgs<ExtArgs>
+  reviewsGiven?: boolean | Prisma.User$reviewsGivenArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -2461,16 +2461,16 @@ export type UserSelectScalar = {
 
 export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "phone" | "passwordHash" | "avatarUrl" | "role" | "addressLine1" | "addressLine2" | "city" | "state" | "country" | "pincode" | "ratingAverage" | "ratingCount" | "isVerified" | "createdAt" | "updatedAt", ExtArgs["result"]["user"]>
 export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  listings?: boolean | Prisma.User$listingsArgs<ExtArgs>
   bids?: boolean | Prisma.User$bidsArgs<ExtArgs>
-  ordersAsBuyer?: boolean | Prisma.User$ordersAsBuyerArgs<ExtArgs>
-  ordersAsSeller?: boolean | Prisma.User$ordersAsSellerArgs<ExtArgs>
-  favourites?: boolean | Prisma.User$favouritesArgs<ExtArgs>
   conversationsCreated?: boolean | Prisma.User$conversationsCreatedArgs<ExtArgs>
   conversationParticipants?: boolean | Prisma.User$conversationParticipantsArgs<ExtArgs>
+  favourites?: boolean | Prisma.User$favouritesArgs<ExtArgs>
+  listings?: boolean | Prisma.User$listingsArgs<ExtArgs>
   messages?: boolean | Prisma.User$messagesArgs<ExtArgs>
-  reviewsGiven?: boolean | Prisma.User$reviewsGivenArgs<ExtArgs>
+  ordersAsBuyer?: boolean | Prisma.User$ordersAsBuyerArgs<ExtArgs>
+  ordersAsSeller?: boolean | Prisma.User$ordersAsSellerArgs<ExtArgs>
   reviewsReceived?: boolean | Prisma.User$reviewsReceivedArgs<ExtArgs>
+  reviewsGiven?: boolean | Prisma.User$reviewsGivenArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -2479,16 +2479,16 @@ export type UserIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
 export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "User"
   objects: {
-    listings: Prisma.$ListingPayload<ExtArgs>[]
     bids: Prisma.$BidPayload<ExtArgs>[]
-    ordersAsBuyer: Prisma.$OrderPayload<ExtArgs>[]
-    ordersAsSeller: Prisma.$OrderPayload<ExtArgs>[]
-    favourites: Prisma.$FavouritePayload<ExtArgs>[]
     conversationsCreated: Prisma.$ConversationPayload<ExtArgs>[]
     conversationParticipants: Prisma.$ConversationParticipantPayload<ExtArgs>[]
+    favourites: Prisma.$FavouritePayload<ExtArgs>[]
+    listings: Prisma.$ListingPayload<ExtArgs>[]
     messages: Prisma.$MessagePayload<ExtArgs>[]
-    reviewsGiven: Prisma.$ReviewPayload<ExtArgs>[]
+    ordersAsBuyer: Prisma.$OrderPayload<ExtArgs>[]
+    ordersAsSeller: Prisma.$OrderPayload<ExtArgs>[]
     reviewsReceived: Prisma.$ReviewPayload<ExtArgs>[]
+    reviewsGiven: Prisma.$ReviewPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -2903,16 +2903,16 @@ readonly fields: UserFieldRefs;
  */
 export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  listings<T extends Prisma.User$listingsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$listingsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ListingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   bids<T extends Prisma.User$bidsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$bidsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BidPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  ordersAsBuyer<T extends Prisma.User$ordersAsBuyerArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$ordersAsBuyerArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$OrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  ordersAsSeller<T extends Prisma.User$ordersAsSellerArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$ordersAsSellerArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$OrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  favourites<T extends Prisma.User$favouritesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$favouritesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FavouritePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   conversationsCreated<T extends Prisma.User$conversationsCreatedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$conversationsCreatedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ConversationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   conversationParticipants<T extends Prisma.User$conversationParticipantsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$conversationParticipantsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ConversationParticipantPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  favourites<T extends Prisma.User$favouritesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$favouritesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FavouritePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  listings<T extends Prisma.User$listingsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$listingsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ListingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   messages<T extends Prisma.User$messagesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$messagesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  reviewsGiven<T extends Prisma.User$reviewsGivenArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$reviewsGivenArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ReviewPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  ordersAsBuyer<T extends Prisma.User$ordersAsBuyerArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$ordersAsBuyerArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$OrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  ordersAsSeller<T extends Prisma.User$ordersAsSellerArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$ordersAsSellerArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$OrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   reviewsReceived<T extends Prisma.User$reviewsReceivedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$reviewsReceivedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ReviewPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  reviewsGiven<T extends Prisma.User$reviewsGivenArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$reviewsGivenArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ReviewPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3348,30 +3348,6 @@ export type UserDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Internal
 }
 
 /**
- * User.listings
- */
-export type User$listingsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Listing
-   */
-  select?: Prisma.ListingSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Listing
-   */
-  omit?: Prisma.ListingOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.ListingInclude<ExtArgs> | null
-  where?: Prisma.ListingWhereInput
-  orderBy?: Prisma.ListingOrderByWithRelationInput | Prisma.ListingOrderByWithRelationInput[]
-  cursor?: Prisma.ListingWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.ListingScalarFieldEnum | Prisma.ListingScalarFieldEnum[]
-}
-
-/**
  * User.bids
  */
 export type User$bidsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -3393,78 +3369,6 @@ export type User$bidsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   take?: number
   skip?: number
   distinct?: Prisma.BidScalarFieldEnum | Prisma.BidScalarFieldEnum[]
-}
-
-/**
- * User.ordersAsBuyer
- */
-export type User$ordersAsBuyerArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Order
-   */
-  select?: Prisma.OrderSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Order
-   */
-  omit?: Prisma.OrderOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.OrderInclude<ExtArgs> | null
-  where?: Prisma.OrderWhereInput
-  orderBy?: Prisma.OrderOrderByWithRelationInput | Prisma.OrderOrderByWithRelationInput[]
-  cursor?: Prisma.OrderWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.OrderScalarFieldEnum | Prisma.OrderScalarFieldEnum[]
-}
-
-/**
- * User.ordersAsSeller
- */
-export type User$ordersAsSellerArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Order
-   */
-  select?: Prisma.OrderSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Order
-   */
-  omit?: Prisma.OrderOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.OrderInclude<ExtArgs> | null
-  where?: Prisma.OrderWhereInput
-  orderBy?: Prisma.OrderOrderByWithRelationInput | Prisma.OrderOrderByWithRelationInput[]
-  cursor?: Prisma.OrderWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.OrderScalarFieldEnum | Prisma.OrderScalarFieldEnum[]
-}
-
-/**
- * User.favourites
- */
-export type User$favouritesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Favourite
-   */
-  select?: Prisma.FavouriteSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Favourite
-   */
-  omit?: Prisma.FavouriteOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.FavouriteInclude<ExtArgs> | null
-  where?: Prisma.FavouriteWhereInput
-  orderBy?: Prisma.FavouriteOrderByWithRelationInput | Prisma.FavouriteOrderByWithRelationInput[]
-  cursor?: Prisma.FavouriteWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.FavouriteScalarFieldEnum | Prisma.FavouriteScalarFieldEnum[]
 }
 
 /**
@@ -3516,6 +3420,54 @@ export type User$conversationParticipantsArgs<ExtArgs extends runtime.Types.Exte
 }
 
 /**
+ * User.favourites
+ */
+export type User$favouritesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Favourite
+   */
+  select?: Prisma.FavouriteSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Favourite
+   */
+  omit?: Prisma.FavouriteOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.FavouriteInclude<ExtArgs> | null
+  where?: Prisma.FavouriteWhereInput
+  orderBy?: Prisma.FavouriteOrderByWithRelationInput | Prisma.FavouriteOrderByWithRelationInput[]
+  cursor?: Prisma.FavouriteWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.FavouriteScalarFieldEnum | Prisma.FavouriteScalarFieldEnum[]
+}
+
+/**
+ * User.listings
+ */
+export type User$listingsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Listing
+   */
+  select?: Prisma.ListingSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Listing
+   */
+  omit?: Prisma.ListingOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ListingInclude<ExtArgs> | null
+  where?: Prisma.ListingWhereInput
+  orderBy?: Prisma.ListingOrderByWithRelationInput | Prisma.ListingOrderByWithRelationInput[]
+  cursor?: Prisma.ListingWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ListingScalarFieldEnum | Prisma.ListingScalarFieldEnum[]
+}
+
+/**
  * User.messages
  */
 export type User$messagesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -3540,9 +3492,57 @@ export type User$messagesArgs<ExtArgs extends runtime.Types.Extensions.InternalA
 }
 
 /**
- * User.reviewsGiven
+ * User.ordersAsBuyer
  */
-export type User$reviewsGivenArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type User$ordersAsBuyerArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Order
+   */
+  select?: Prisma.OrderSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Order
+   */
+  omit?: Prisma.OrderOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.OrderInclude<ExtArgs> | null
+  where?: Prisma.OrderWhereInput
+  orderBy?: Prisma.OrderOrderByWithRelationInput | Prisma.OrderOrderByWithRelationInput[]
+  cursor?: Prisma.OrderWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.OrderScalarFieldEnum | Prisma.OrderScalarFieldEnum[]
+}
+
+/**
+ * User.ordersAsSeller
+ */
+export type User$ordersAsSellerArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Order
+   */
+  select?: Prisma.OrderSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Order
+   */
+  omit?: Prisma.OrderOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.OrderInclude<ExtArgs> | null
+  where?: Prisma.OrderWhereInput
+  orderBy?: Prisma.OrderOrderByWithRelationInput | Prisma.OrderOrderByWithRelationInput[]
+  cursor?: Prisma.OrderWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.OrderScalarFieldEnum | Prisma.OrderScalarFieldEnum[]
+}
+
+/**
+ * User.reviewsReceived
+ */
+export type User$reviewsReceivedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
    * Select specific fields to fetch from the Review
    */
@@ -3564,9 +3564,9 @@ export type User$reviewsGivenArgs<ExtArgs extends runtime.Types.Extensions.Inter
 }
 
 /**
- * User.reviewsReceived
+ * User.reviewsGiven
  */
-export type User$reviewsReceivedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type User$reviewsGivenArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
    * Select specific fields to fetch from the Review
    */

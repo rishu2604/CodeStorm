@@ -9,8 +9,8 @@
  * 🟢 You can import this file directly.
  */
 import type * as runtime from "@prisma/client/runtime/client"
-import type * as $Enums from "../enums.js"
-import type * as Prisma from "../internal/prismaNamespace.js"
+import type * as $Enums from "../enums"
+import type * as Prisma from "../internal/prismaNamespace"
 
 /**
  * Model Bid
@@ -224,8 +224,8 @@ export type BidWhereInput = {
   amount?: Prisma.DecimalFilter<"Bid"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   status?: Prisma.EnumBidStatusFilter<"Bid"> | $Enums.BidStatus
   createdAt?: Prisma.DateTimeFilter<"Bid"> | Date | string
-  listing?: Prisma.XOR<Prisma.ListingScalarRelationFilter, Prisma.ListingWhereInput>
   bidder?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  listing?: Prisma.XOR<Prisma.ListingScalarRelationFilter, Prisma.ListingWhereInput>
 }
 
 export type BidOrderByWithRelationInput = {
@@ -235,8 +235,8 @@ export type BidOrderByWithRelationInput = {
   amount?: Prisma.SortOrder
   status?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
-  listing?: Prisma.ListingOrderByWithRelationInput
   bidder?: Prisma.UserOrderByWithRelationInput
+  listing?: Prisma.ListingOrderByWithRelationInput
 }
 
 export type BidWhereUniqueInput = Prisma.AtLeast<{
@@ -249,8 +249,8 @@ export type BidWhereUniqueInput = Prisma.AtLeast<{
   amount?: Prisma.DecimalFilter<"Bid"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   status?: Prisma.EnumBidStatusFilter<"Bid"> | $Enums.BidStatus
   createdAt?: Prisma.DateTimeFilter<"Bid"> | Date | string
-  listing?: Prisma.XOR<Prisma.ListingScalarRelationFilter, Prisma.ListingWhereInput>
   bidder?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  listing?: Prisma.XOR<Prisma.ListingScalarRelationFilter, Prisma.ListingWhereInput>
 }, "id">
 
 export type BidOrderByWithAggregationInput = {
@@ -284,8 +284,8 @@ export type BidCreateInput = {
   amount: runtime.Decimal | runtime.DecimalJsLike | number | string
   status?: $Enums.BidStatus
   createdAt?: Date | string
-  listing: Prisma.ListingCreateNestedOneWithoutBidsInput
   bidder: Prisma.UserCreateNestedOneWithoutBidsInput
+  listing: Prisma.ListingCreateNestedOneWithoutBidsInput
 }
 
 export type BidUncheckedCreateInput = {
@@ -302,8 +302,8 @@ export type BidUpdateInput = {
   amount?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   status?: Prisma.EnumBidStatusFieldUpdateOperationsInput | $Enums.BidStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  listing?: Prisma.ListingUpdateOneRequiredWithoutBidsNestedInput
   bidder?: Prisma.UserUpdateOneRequiredWithoutBidsNestedInput
+  listing?: Prisma.ListingUpdateOneRequiredWithoutBidsNestedInput
 }
 
 export type BidUncheckedUpdateInput = {
@@ -642,8 +642,8 @@ export type BidSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = ru
   amount?: boolean
   status?: boolean
   createdAt?: boolean
-  listing?: boolean | Prisma.ListingDefaultArgs<ExtArgs>
   bidder?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  listing?: boolean | Prisma.ListingDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["bid"]>
 
 export type BidSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -653,8 +653,8 @@ export type BidSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extension
   amount?: boolean
   status?: boolean
   createdAt?: boolean
-  listing?: boolean | Prisma.ListingDefaultArgs<ExtArgs>
   bidder?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  listing?: boolean | Prisma.ListingDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["bid"]>
 
 export type BidSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -664,8 +664,8 @@ export type BidSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extension
   amount?: boolean
   status?: boolean
   createdAt?: boolean
-  listing?: boolean | Prisma.ListingDefaultArgs<ExtArgs>
   bidder?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  listing?: boolean | Prisma.ListingDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["bid"]>
 
 export type BidSelectScalar = {
@@ -679,23 +679,23 @@ export type BidSelectScalar = {
 
 export type BidOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "listingId" | "bidderId" | "amount" | "status" | "createdAt", ExtArgs["result"]["bid"]>
 export type BidInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  listing?: boolean | Prisma.ListingDefaultArgs<ExtArgs>
   bidder?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  listing?: boolean | Prisma.ListingDefaultArgs<ExtArgs>
 }
 export type BidIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  listing?: boolean | Prisma.ListingDefaultArgs<ExtArgs>
   bidder?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  listing?: boolean | Prisma.ListingDefaultArgs<ExtArgs>
 }
 export type BidIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  listing?: boolean | Prisma.ListingDefaultArgs<ExtArgs>
   bidder?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  listing?: boolean | Prisma.ListingDefaultArgs<ExtArgs>
 }
 
 export type $BidPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Bid"
   objects: {
-    listing: Prisma.$ListingPayload<ExtArgs>
     bidder: Prisma.$UserPayload<ExtArgs>
+    listing: Prisma.$ListingPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1098,8 +1098,8 @@ readonly fields: BidFieldRefs;
  */
 export interface Prisma__BidClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  listing<T extends Prisma.ListingDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ListingDefaultArgs<ExtArgs>>): Prisma.Prisma__ListingClient<runtime.Types.Result.GetResult<Prisma.$ListingPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   bidder<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  listing<T extends Prisma.ListingDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ListingDefaultArgs<ExtArgs>>): Prisma.Prisma__ListingClient<runtime.Types.Result.GetResult<Prisma.$ListingPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
