@@ -1,11 +1,13 @@
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
+import Dashboard from "./pages/Dashboard";
 
-
-function App() {
+export default function App() {
   return (
-    <div>
-      <h1>OLX App</h1>
-    </div>
-  )
+    <Routes>
+      <Route path="/landing" element={<LandingPage />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+    </Routes>
+  );
 }
-
-export default App
