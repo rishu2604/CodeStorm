@@ -18,16 +18,12 @@ export class ListingsController {
 
   @Get()
   async findAll(
-    @Query('skip', ParseIntPipe) skip?: number,
-    @Query('take', ParseIntPipe) take?: number,
-    @Query('categoryId') categoryId?: string,
-    @Query('status') status?: string,
-    @Query('city') city?: string,
-    @Query('state') state?: string,
-    @Query('country') country?: string,
+    @Query('page') page: string = '1',
+    @Query('pageSize') pageSize: string = '10'
   ) {
-    const filters = { categoryId, status, city, state, country };
-    return this.listingsService.findAll(skip, take, filters);
+    const pageNumber = parseInt(page, 10) || 1;
+  const perPage = parseInt(pageSize, 10) || 10;
+    return this.listingsService.findAll(pageNumber, perPage);
   }
 
   @Get('auctions/active')

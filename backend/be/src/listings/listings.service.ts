@@ -30,8 +30,12 @@ export class ListingsService {
     });
   }
 
-  async findAll(skip = 0, take = 10, filters?: any) {
-    const where = this.buildWhereClause(filters);
+  async findAll(page: number, pageSize: number) {
+    // const where = this.buildWhereClause(filters);
+
+    const skip = (page - 1) * pageSize;
+    const take = pageSize;
+    const where: any = {};
 
     const [listings, total] = await Promise.all([
       this.prisma.client.listing.findMany({
