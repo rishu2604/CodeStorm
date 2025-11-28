@@ -1,0 +1,300 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id                       String                    @id @default(uuid())
+  name                     String
+  email                    String                    @unique
+  phone                    String                    @unique
+  passwordHash             String
+  avatarUrl                String?
+  role                     UserRole                  @default(USER)
+  addressLine1             String?
+  addressLine2             String?
+  city                     String?
+  state                    String?
+  country                  String?
+  pincode                  String?
+  ratingAverage            Decimal                   @default(0)
+  ratingCount              Int                       @default(0)
+  isVerified               Boolean                   @default(false)
+  createdAt                DateTime                  @default(now())
+  updatedAt                DateTime                  @updatedAt
+  bids                     Bid[]
+  conversationsCreated     Conversation[]            @relation("ConversationCreator")
+  conversationParticipants ConversationParticipant[]
+  favourites               Favourite[]
+  listings                 Listing[]                 @relation("UserListings")
+  messages                 Message[]
+  ordersAsBuyer            Order[]                   @relation("BuyerOrders")
+  ordersAsSeller           Order[]                   @relation("SellerOrders")
+  reviewsReceived          Review[]                  @relation("ReviewsReceived")
+  reviewsGiven             Review[]                  @relation("ReviewsGiven")
+
+  @@index([email])
+  @@index([phone])
+}
+
+model Category {
+  id        String     @id @default(uuid())
+  name      String
+  slug      String     @unique
+  icon      String?
+  parentId  String?
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  parent    Category?  @relation("CategoryToParent", fields: [parentId], references: [id])
+  children  Category[] @relation("CategoryToParent")
+  listings  Listing[]
+
+  @@index([parentId])
+}
+
+model Listing {
+  id              String         @id @default(uuid())
+  sellerId        String
+  categoryId      String
+  title           String
+  description     String
+  condition       ConditionType  @default(USED)
+  pricingType     PricingType
+  price           Decimal?
+  startingPrice   Decimal?
+  buyNowPrice     Decimal?
+  currentPrice    Decimal?
+  minBidIncrement Decimal?       @default(0)
+  auctionStartAt  DateTime?
+  auctionEndAt    DateTime?
+  status          ListingStatus  @default(ACTIVE)
+  address         String?
+  city            String?
+  state           String?
+  country         String?
+  pincode         String?
+  latitude        Decimal?
+  longitude       Decimal?
+  viewsCount      Int            @default(0)
+  favouritesCount Int            @default(0)
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+  bids            Bid[]
+  conversations   Conversation[]
+  favourites      Favourite[]
+  category        Category       @relation(fields: [categoryId], references: [id])
+  seller          User           @relation("UserListings", fields: [sellerId], references: [id])
+  images          ListingImage[]
+  orders          Order[]
+
+  @@index([categoryId, status])
+  @@index([sellerId])
+  @@index([city, state, country])
+  @@index([status, auctionEndAt])
+}
+
+model ListingImage {
+  id        String   @id @default(uuid())
+  listingId String
+  url       String
+  isPrimary Boolean  @default(false)
+  sortOrder Int?     @default(0)
+  createdAt DateTime @default(now())
+  listing   Listing  @relation(fields: [listingId], references: [id])
+
+  @@index([listingId])
+}
+
+model Bid {
+  id        String    @id @default(uuid())
+  listingId String
+  bidderId  String
+  amount    Decimal
+  status    BidStatus @default(VALID)
+  createdAt DateTime  @default(now())
+  bidder    User      @relation(fields: [bidderId], references: [id])
+  listing   Listing   @relation(fields: [listingId], references: [id])
+
+  @@index([listingId, amount])
+  @@index([bidderId])
+}
+
+model Order {
+  id              String      @id @default(uuid())
+  listingId       String
+  buyerId         String
+  sellerId        String
+  saleType        SaleType
+  finalPrice      Decimal
+  orderStatus     OrderStatus @default(CREATED)
+  shippingName    String?
+  shippingPhone   String?
+  shippingAddress String?
+  shippingCity    String?
+  shippingState   String?
+  shippingCountry String?
+  shippingPincode String?
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+  buyer           User        @relation("BuyerOrders", fields: [buyerId], references: [id])
+  listing         Listing     @relation(fields: [listingId], references: [id])
+  seller          User        @relation("SellerOrders", fields: [sellerId], references: [id])
+  payments        Payment[]
+  reviews         Review[]
+
+  @@index([buyerId])
+  @@index([sellerId])
+  @@index([listingId])
+}
+
+model Payment {
+  id                String         @id @default(uuid())
+  orderId           String
+  gateway           PaymentGateway
+  amount            Decimal
+  currency          String         @default("INR")
+  status            PaymentStatus  @default(PENDING)
+  gatewayPaymentId  String?
+  gatewayOrderId    String?
+  gatewayCustomerId String?
+  errorCode         String?
+  errorMessage      String?
+  metadata          Json?
+  createdAt         DateTime       @default(now())
+  updatedAt         DateTime       @updatedAt
+  order             Order          @relation(fields: [orderId], references: [id])
+
+  @@index([orderId])
+  @@index([gateway, gatewayPaymentId])
+  @@index([status])
+}
+
+model Favourite {
+  userId    String
+  listingId String
+  createdAt DateTime @default(now())
+  listing   Listing  @relation(fields: [listingId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@id([userId, listingId])
+  @@index([listingId])
+}
+
+model Conversation {
+  id            String                    @id @default(uuid())
+  listingId     String?
+  createdById   String
+  lastMessageAt DateTime?
+  createdAt     DateTime                  @default(now())
+  updatedAt     DateTime                  @updatedAt
+  createdBy     User                      @relation("ConversationCreator", fields: [createdById], references: [id])
+  listing       Listing?                  @relation(fields: [listingId], references: [id])
+  participants  ConversationParticipant[]
+  messages      Message[]
+}
+
+model ConversationParticipant {
+  conversationId String
+  userId         String
+  conversation   Conversation @relation(fields: [conversationId], references: [id])
+  user           User         @relation(fields: [userId], references: [id])
+
+  @@id([conversationId, userId])
+  @@index([userId])
+}
+
+model Message {
+  id             String       @id @default(uuid())
+  conversationId String
+  senderId       String
+  text           String?
+  attachments    Json?
+  isRead         Boolean      @default(false)
+  createdAt      DateTime     @default(now())
+  conversation   Conversation @relation(fields: [conversationId], references: [id])
+  sender         User         @relation(fields: [senderId], references: [id])
+
+  @@index([conversationId, createdAt])
+  @@index([senderId])
+}
+
+model Review {
+  id         String   @id @default(uuid())
+  reviewerId String
+  revieweeId String
+  orderId    String
+  rating     Int
+  comment    String?
+  createdAt  DateTime @default(now())
+  order      Order    @relation(fields: [orderId], references: [id])
+  reviewee   User     @relation("ReviewsReceived", fields: [revieweeId], references: [id])
+  reviewer   User     @relation("ReviewsGiven", fields: [reviewerId], references: [id])
+
+  @@index([revieweeId])
+  @@index([reviewerId])
+}
+
+enum UserRole {
+  USER
+  ADMIN
+}
+
+enum ListingStatus {
+  DRAFT
+  ACTIVE
+  SOLD
+  EXPIRED
+  CANCELLED
+}
+
+enum PricingType {
+  FIXED
+  BIDDING
+}
+
+enum ConditionType {
+  NEW
+  LIKE_NEW
+  USED
+  REFURBISHED
+}
+
+enum BidStatus {
+  VALID
+  OUTBID
+  WON
+  CANCELLED
+}
+
+enum SaleType {
+  FIXED
+  BIDDING
+}
+
+enum OrderStatus {
+  CREATED
+  PROCESSING
+  SHIPPED
+  COMPLETED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  PENDING
+  REQUIRES_ACTION
+  PAID
+  FAILED
+  REFUNDED
+  CANCELLED
+}
+
+enum PaymentGateway {
+  STRIPE
+  RAZORPAY
+  PAYPAL
+  OTHER
+}
