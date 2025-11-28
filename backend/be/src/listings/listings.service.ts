@@ -1,6 +1,7 @@
 import { Injectable, NotFoundException, BadRequestException } from '@nestjs/common';
 import { PrismaService } from '../prisma.service';
 import { ListingStatus, PricingType } from 'generated/prisma/enums';
+import { Prisma } from 'generated/prisma/client';
 
 @Injectable()
 export class ListingsService {
@@ -170,7 +171,7 @@ export class ListingsService {
             },
           },
         },
-        orderBy: { amount: 'desc' },
+        orderBy: { amount: Prisma.SortOrder.desc },
         take: 10,
       },
       _count: {

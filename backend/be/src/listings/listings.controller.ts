@@ -10,14 +10,14 @@ export class ListingsController {
   constructor(private readonly listingsService: ListingsService) {}
 
   @Post()
-  create(@Body() createListingDto: any) {
+  async create(@Body() createListingDto: any) {
     // In real app, get sellerId from authenticated user
     const sellerId = 'temp-seller-id'; // Replace with actual user ID from auth
     return this.listingsService.create(sellerId, createListingDto);
   }
 
   @Get()
-  findAll(
+  async findAll(
     @Query('skip', ParseIntPipe) skip?: number,
     @Query('take', ParseIntPipe) take?: number,
     @Query('categoryId') categoryId?: string,
@@ -31,22 +31,22 @@ export class ListingsController {
   }
 
   @Get('auctions/active')
-  getActiveAuctions() {
+  async getActiveAuctions() {
     return this.listingsService.getActiveAuctions();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
+  async findOne(@Param('id') id: string) {
     return this.listingsService.findOne(id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateListingDto: any) {
+  async update(@Param('id') id: string, @Body() updateListingDto: any) {
     return this.listingsService.update(id, updateListingDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
+  async remove(@Param('id') id: string) {
     return this.listingsService.remove(id);
   }
 
