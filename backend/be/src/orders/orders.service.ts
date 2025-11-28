@@ -2,7 +2,7 @@
 import { Injectable, NotFoundException, BadRequestException, ConflictException } from '@nestjs/common';
 import { Prisma } from 'generated/prisma/client';
 import { OrderStatus, SaleType } from 'generated/prisma/enums';
-import { PrismaService } from 'src/prisma.service';
+import { PrismaService } from '../prisma.service';
 
 
 @Injectable()
@@ -242,7 +242,7 @@ export class OrdersService {
         },
       });
 
-      if (!order.payments.length) {
+      if (!order?.payments.length) {
         throw new BadRequestException('Cannot complete order without successful payment');
       }
     }
@@ -287,9 +287,21 @@ export class OrdersService {
     // Check if order can be cancelled (only CREATED or PROCESSING orders can be cancelled)
     const order = await this.prisma.client.order.findUnique({
       where: { id },
+      select: {
+        orderStatus: true
+      }
     });
 
-    if (![OrderStatus.CREATED, OrderStatus.PROCESSING].includes(order.orderStatus)) {
+    if (!order) {
+      throw new BadRequestException('Order not found');
+    }
+
+    const allowedStatuses: OrderStatus[] = [
+      OrderStatus.CREATED,
+      OrderStatus.PROCESSING
+    ];
+
+    if (!allowedStatuses.includes(order.orderStatus)) {
       throw new BadRequestException('Cannot delete order that has been shipped or completed');
     }
 
