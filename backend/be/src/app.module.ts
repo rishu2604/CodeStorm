@@ -19,9 +19,10 @@ import { UsersController } from './users/users.controller';
 import { UsersService } from './users/users.service';
 import { UsersModule } from './users/users.module';
 import { ProductModule } from './product/product.module';
+import { CategoriesModule } from './categories/categories.module';
 
 @Module({
-  imports: [PrismaModule, BidsModule, ChatsModule, ListingsModule, PaymentsModule, OrdersModule, UsersModule, ProductModule],
+  imports: [PrismaModule, BidsModule, ChatsModule, ListingsModule, PaymentsModule, OrdersModule, UsersModule, ProductModule, CategoriesModule],
   controllers: [AppController, ProductController, BidsController, ChatsController, UsersController],
   providers: [AppService, PrismaService, BidsService, ChatsService, ListingsService, PaymentsService, UsersService],
 })
