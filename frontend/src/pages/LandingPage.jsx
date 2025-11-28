@@ -64,6 +64,7 @@ import { motion } from "framer-motion";
 
 export default function LandingPage({ keycloak }) {
   const [animateUp, setAnimateUp] = useState(false);
+  const [clicked, setClicked] = useState(false);
 
   // Wait for the dog animation to run (~2.5s), then show products
   useEffect(() => {
@@ -73,20 +74,24 @@ export default function LandingPage({ keycloak }) {
     return () => clearTimeout(timer);
   }, []);
 
-  const products = [
-    { id: 1, name: "Dog Toy", price: "$10" },
-    { id: 2, name: "Dog Food", price: "$25" },
-    { id: 3, name: "Dog Bed", price: "$40" },
-    { id: 4, name: "Leash", price: "$12" },
-    { id: 5, name: "Collar", price: "$8" },
-    { id: 6, name: "Treats", price: "$6" },
-  ];
+  // const products = [
+  //   { id: 1, name: "Dog Toy", price: "$10" },
+  //   { id: 2, name: "Dog Food", price: "$25" },
+  //   { id: 3, name: "Dog Bed", price: "$40" },
+  //   { id: 4, name: "Leash", price: "$12" },
+  //   { id: 5, name: "Collar", price: "$8" },
+  //   { id: 6, name: "Treats", price: "$6" },
+  // ];
 
   const handleLogout = () => {
     keycloak.logout({
       redirectUri: window.location.origin,
     });
   };
+
+  const handleAddButtonClick = () => {
+    setClicked(true);
+  }
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center pt-10 relative">
@@ -118,7 +123,7 @@ export default function LandingPage({ keycloak }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          {products.map((p) => (
+          {/* {products.map((p) => (
             <div
               key={p.id}
               className="bg-white p-6 rounded-2xl shadow-md text-center"
@@ -126,9 +131,13 @@ export default function LandingPage({ keycloak }) {
               <h3 className="text-xl font-semibold mb-2">{p.name}</h3>
               <p className="text-gray-600">{p.price}</p>
             </div>
-          ))}
+          ))} */}
+          <ProductListingPage />
         </motion.div>
       )}
+
+      <button onClick={handleAddButtonClick}>Add Product</button>
+      {clicked && <AddProductPage />}
     </div>
   );
 }
